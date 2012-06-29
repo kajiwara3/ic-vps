@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application"%>
+    <%= javascript_include_tag "common" %>
+    <%= csrf_meta_tags %>
+    <title>あなたのサイト名などお書きください</title>
+    <!--[if lt IE 7]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="top">
+      <div id="header">
+        <h1><a href="index.html">サイトロゴ</a></h1>
+        <div id="pr">
+          <p>
+            ここにサイトの説明文などをお書きください。ここにサイトの説明文などをお書きください。ここにサイトの説明文などをお書きください。
+          </p>
+          <!-- /#pr -->
+        </div>
+        <!-- /#header -->
+      </div>
+      <%= render "shared/menu_bar" %>
+      <%= render "shared/topic_path"%>
+      <% if flash.notice || flash.alert %>
+        <p class="notice">
+          <%= flash.notice %>
+          <%= flash.alert %>
+        </p>
+      <% end %>
+      <div id="contents">
+        <div id="main">
+          <%= yield %>
+        </div>
+       <!-- /#main -->
+        <%= render "shared/side_menu" %>
+        <div id="pageTop">
+          <a href="#">ページのトップへ戻る</a>
+          <!-- /#pageTop -->
+        </div>
+        <!-- /#contents -->
+      </div>
+      <div id="footer">
+        <div class="copyright">
+          Copyright &copy; 2011 YOUR SITE NAME All Rights Reserved.
+        </div>
+        <!-- /#footer -->
+      </div>
+      <!-- /#top -->
+    </div>
+  </body>
+</html>

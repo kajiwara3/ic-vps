@@ -1,0 +1,19 @@
+<% @title = "TOP" %>
+<h1><%= @title %></h1>
+<table>
+  <tr>
+    <th>名前</th>
+    <th>稼働開始</th>
+    <th>稼働終了</th>
+    <th>ステータス</th>
+  </tr>
+  <% @server_list.each do |server| %>
+    <tr>
+      <td><%= link_to server.name, [current_partner, server] %></td>
+      <td><%= server.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+      <td><%= server.expired_at.strftime("%Y/%m/%d %H:%M") %></td>
+      <td>-</td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @server_list %>

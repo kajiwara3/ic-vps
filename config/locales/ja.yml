@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      partner: パートナー情報
+      administrator: 管理者情報
+    attributes:
+      partner:
+        name: 名前
+        name_kana: 名前カナ
+        address: 住所
+        email: メールアドレス
+        password: ログインパスワード
+        password_confirmation: 確認用パスワード
+      administrator:
+        name: 名前
+        email: メールアドレス
+        password: ログインパスワード
+        password_confirmation: 確認用パスワード
+  will_paginate:
+    previous_label: "前へ"
+    next_label: "次へ"

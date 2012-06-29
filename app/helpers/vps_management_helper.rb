@@ -1,0 +1,2 @@
+module VpsManagementHelper
+end

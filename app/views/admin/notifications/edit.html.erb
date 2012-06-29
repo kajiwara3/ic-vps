@@ -1,0 +1,8 @@
+<% @title = "編集" %>
+<h1><%= @title %></h1>
+<%= link_to "一覧に戻る", :admin_notifications %> | 
+<%= link_to "お知らせ詳細に戻る", [:admin, @notification]%>
+<%= form_for [:admin, @notification] do |form| %>
+  <%= render "form", form: form %>
+  <p><%= form.submit %></p>
+<% end %>

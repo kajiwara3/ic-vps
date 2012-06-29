@@ -1,0 +1,27 @@
+<%= render "shared/errors", obj: @notification %>
+<table>
+  <tr>
+    <th><%= form.label :title %></th>
+    <td><%= form.text_field :title %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :body %></th>
+    <td><%= form.text_area :body, cols: 50, rows: 10 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :released_at %></th>
+    <td>
+      <%= form.date_select :released_at,
+            start_year: Time.now.year, end_year: Time.now.year,
+            use_month_numbers: true %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :expired_at %></th>
+    <td>
+      <%= form.date_select :expired_at,
+            start_year: Time.now.year, end_year: Time.now.year + 1,
+            use_month_numbers: true %>
+    </td>
+  </tr>
+</table>
