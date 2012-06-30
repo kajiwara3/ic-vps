@@ -5,6 +5,5 @@ class PrivateServersController < ApplicationController
   end
 
   def destroy
-
   end
 end
