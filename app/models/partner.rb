@@ -1,3 +1,4 @@
+# coding: utf-8
 class Partner < ActiveRecord::Base
   has_many :private_servers, dependent: :destroy
   # Include default devise modules. Others available are:
