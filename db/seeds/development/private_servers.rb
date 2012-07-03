@@ -3,7 +3,7 @@
   partner_id = idx + 1
   partner = Partner.find_by_id(partner_id)
   0.upto(9) do |x|
-    PrivateServers.create(
+    PrivateServer.create(
       { partner_id: partner.id,
       name: "partner_#{partner_id}_server no.#{x + 1}",
       released_at: 2.days.ago.advance(days: -x),
