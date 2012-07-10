@@ -1,6 +1,6 @@
 <% @title = "新規追加" %>
 <h1><%= @title %></h1>
-<%= link_to "一覧に戻る", :admin_administrators %> 
+<%= link_to "一覧に戻る", :admin_administrators %>
 <%= form_for [:admin, @administrator] do |form| %>
   <%= render "form", form: form %>
   <p><%= form.submit %></p>

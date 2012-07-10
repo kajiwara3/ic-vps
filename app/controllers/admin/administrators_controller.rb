@@ -36,7 +36,7 @@ class Admin::AdministratorsController < Admin::Base
     end
   end
 
-  # パートナー更新アクション
+  # 管理者更新アクション
   def update
     @administrator = Administrator.find(params[:id])
     @administrator.assign_attributes(params[:administrator])
@@ -47,7 +47,7 @@ class Admin::AdministratorsController < Admin::Base
     end
   end
 
-  # パートナー削除アクション
+  # 管理者削除アクション
   def destroy
     @administrator = Administrator.find(params[:id])
     if @administrator.destroy
@@ -55,5 +55,13 @@ class Admin::AdministratorsController < Admin::Base
     else
       render "show"
     end
+  end
+
+  # 管理者検索アクション
+  def search
+    @administrators = Administrator.search(params[:name])
+
+    render "index"
+    #format.js
   end
 end

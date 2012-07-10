@@ -1,0 +1,9 @@
+<%= form_tag :search_admin_administrators, method: :get do %>
+  <table>
+    <tr>
+      <th>名前</th>
+      <td><%= text_field_tag "name", params[:name] %></td>
+    </tr>
+  </table>
+  <%= submit_tag "検索" %>
+<% end %>

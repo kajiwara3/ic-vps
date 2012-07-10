@@ -1,20 +1,12 @@
 <% @title = "管理者一覧" %>
 <h1><%= @title %></h1>
+<%= render "search_form" %>
 <%= link_to "管理者を追加する", :new_admin_administrator %>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>名前</th>
-    <th>メールアドレス</th>
-  </tr>
-  <% @administrators.each do |administrator| %>
-    <tr>
-      <td><%= administrator.id %></td>
-      <td>
-        <%= link_to administrator.name, [:admin, administrator] %>
-      </td>
-      <td><%= administrator.email %></td>
-    </tr>
+<div id="admin_list">
+  <% if @administrators %>
+    <%= render "admin_list"%>
+    <%= will_paginate @members %>
+  <% else %>
+    表示できる管理者情報がありません
   <% end %>
-</table>
-<%= will_paginate @members %>
+</div>

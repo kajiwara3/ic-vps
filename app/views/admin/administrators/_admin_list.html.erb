@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>名前</th>
+    <th>メールアドレス</th>
+  </tr>
+  <% @administrators.each do |administrator| %>
+    <tr>
+      <td><%= administrator.id %></td>
+      <td>
+        <%= link_to administrator.name, [:admin, administrator] %>
+      </td>
+      <td><%= administrator.email %></td>
+    </tr>
+  <% end %>
+</table>
