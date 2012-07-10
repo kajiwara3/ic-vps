@@ -4,10 +4,12 @@ module VpsManager
   def list_vps
     logger.debug('========================= 1')
     begin
-      #require 'libvirt'
+      require 'libvirt'
       url = "qemu+tcp://root@192.168.0.140:16509/system"
       logger.debug('========================= 2')
       conn = Libvirt::open(url)
+      puts conn.list_defined_domains;
+
       logger.debug('========================= 3')
     rescue => e
     logger.debug('========================= 4')
