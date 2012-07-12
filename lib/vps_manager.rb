@@ -3,7 +3,7 @@
 module VpsManager
   # ハイパーバーザーのコネクションを取得する
   def open_hypervisor_connection
-    url = "qemu+tcp://root@192.168.0.140:16509/system"
+    url = IcVps::Application.config.hypervisor_uri
     conn = Libvirt::open(url)
   end
 

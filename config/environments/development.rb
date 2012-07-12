@@ -35,4 +35,7 @@ IcVps::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Hypervisor uri
+  config.hypervisor_uri = "qemu+tcp://root@192.168.0.140:16509/system"
 end
