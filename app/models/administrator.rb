@@ -34,11 +34,11 @@ class Administrator < ActiveRecord::Base
       end
     end
 
-    def search(query)
+    def search(query, page)
       rel = order("id")
       if query.present?
         rel = rel.where("name LIKE ?", "%#{query}%").
-          paginate(page: params[:page], per_page: 5)
+          paginate(page: page, per_page: 5)
       end
     end
   end

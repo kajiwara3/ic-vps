@@ -59,7 +59,7 @@ class Admin::AdministratorsController < Admin::Base
 
   # 管理者検索アクション
   def search
-    @administrators = Administrator.search(params[:name])
+    @administrators = Administrator.search(params[:name], params[:page])
 
     render "index"
     #format.js

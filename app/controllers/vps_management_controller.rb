@@ -5,7 +5,7 @@ class VpsManagementController < ApplicationController
 
   # 一覧表示アクション。
   def index
-    list_vps
+    @domain_list = list_vps
     @server_list = current_partner.private_servers.
                         order("id").
                         paginate(page: params[:page], per_page: 5)

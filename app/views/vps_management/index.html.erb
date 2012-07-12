@@ -1,5 +1,13 @@
 <% @title = "TOP" %>
 <h1><%= @title %></h1>
+<% @domain_list.each do |domain| %>
+<ul>
+  <li>
+    <%= domain %>
+  </li>
+</ul>
+
+<% end %>
 <table>
   <tr>
     <th>名前</th>
