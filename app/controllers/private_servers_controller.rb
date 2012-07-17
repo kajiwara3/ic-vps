@@ -6,4 +6,19 @@ class PrivateServersController < ApplicationController
 
   def destroy
   end
+
+  # vpsインスタンス停止アクション。
+  def stop
+    @server = PrivateServer.find(params[:server_id])
+    flash[:notice] = "サーバーを停止しました。"
+    redirect_to action: "show"
+  end
+
+  # vpsインスタン再起動用アクション
+  def reboot
+  end
+
+  # vpsインスタンス起動用アクション
+  def start
+  end
 end

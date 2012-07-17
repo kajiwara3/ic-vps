@@ -7,7 +7,9 @@ IcVps::Application.routes.draw do
   resources :vps_management
 
   resources :partners do
-    resources :private_servers
+    resources :private_servers do
+      member { put "stop", "start", "reboot" }
+    end
   end
 
   resources :private_servers
