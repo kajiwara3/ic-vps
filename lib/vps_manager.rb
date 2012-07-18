@@ -3,6 +3,7 @@
 module VpsManager
   # ハイパーバーザーのコネクションを取得する
   def open_hypervisor_connection
+    require_libvirt
     url = IcVps::Application.config.hypervisor_uri
     conn = Libvirt::open(url)
   end
@@ -24,8 +25,35 @@ module VpsManager
 #    puts conn.list_defined_domains;
   end
 
+  # 指定したドメイン名に該当するドメインのコネクションインスタンスを取得して返します。
+  def get_domain_connection_by_name(domain_name)
+    requre_libvirt
+    begin
+      conn == conn.lookup_domain_by_name(domain_name)
+    rescue => e
+      raise e.class, "#{e.message}", e.backtrace
+    end
+  end
+
+  # 指定したドメインが起動中であるかを返します。
+  def domain_running?(domain)
+    require_libvirt
+    if domain.info.state == Libvirt::Domain::RUNNING
+      return true
+    end
+    return false
+  end
+
   # 指定したドメイン名に該当するドメインのインスタンスを起動する。
-  def start_up_domain(domain_name)
+  def startup_domain(domain)
+    require_libvirt
+    domain.create unless domain_running? domain
+  end
+
+  # 指定したドメインのインスタンスをシャットダウンします。
+  def shutdown_domain(domain)
+    requre_libvirt
+    domain.shutdown
   end
 
   # 指定したドメイン名に該当するドメインを取得し、正式名を返す。

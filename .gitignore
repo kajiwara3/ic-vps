@@ -28,3 +28,4 @@ pickle-email-*.html
 .project
 .classpath
 vendor/bundle
+.settings
