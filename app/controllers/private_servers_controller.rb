@@ -10,8 +10,10 @@ class PrivateServersController < ApplicationController
   end
 
   # vpsインスタンス起動用アクション
-  def start(domain_name)
-    @server = PrivateServer.find(params[:server_id])
+  def start
+    server_id = params[:server_id]
+    @server = PrivateServer.find(server_id)
+    domain_name = params[:domain_name]
     domain = get_domain_connection_by_name(domain_name)
     startup domain
     flash[:notice] = "サーバーを起動しました"
@@ -19,8 +21,10 @@ class PrivateServersController < ApplicationController
   end
 
   # vpsインスタンス停止アクション。
-  def stop(domain_name)
-    @server = PrivateServer.find(params[:server_id])
+  def stop
+    server_id = params[:server_id]
+    @server = PrivateServer.find(server_id)
+    domain_name = params[:domain_name]
     domain = get_domain_connection_by_name(domain_name)
     shutdown domain
     flash[:notice] = "サーバーを停止しました。"
