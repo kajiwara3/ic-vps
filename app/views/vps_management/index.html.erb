@@ -1,6 +1,16 @@
 <% @title = "TOP" %>
 <h1><%= @title %></h1>
-<% @domain_list.each do |domain| %>
+active list
+<% @active_domain_list.each do |domain| %>
+  <ul>
+    <li>
+      <%= domain %>
+    </li>
+  </ul>
+<% end %>
+
+defined list
+<% @defined_domain_list.each do |domain| %>
   <ul>
     <li>
       <%= domain %>
