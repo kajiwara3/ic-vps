@@ -13,7 +13,7 @@ class PrivateServersController < ApplicationController
   def start(domain_name)
     @server = PrivateServer.find(params[:server_id])
     domain = get_domain_connection_by_name(domain_name)
-    startup_domain domain
+    startup domain
     flash[:notice] = "サーバーを起動しました"
     redirect_to action: "show"
   end
@@ -22,7 +22,7 @@ class PrivateServersController < ApplicationController
   def stop(domain_name)
     @server = PrivateServer.find(params[:server_id])
     domain = get_domain_connection_by_name(domain_name)
-    shutdown_domain domain
+    shutdown domain
     flash[:notice] = "サーバーを停止しました。"
     redirect_to action: "show"
   end
