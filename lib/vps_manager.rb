@@ -1,6 +1,25 @@
 # coding: utf-8
 
 module VpsManager
+  # ドメインステータス名：「起動中」
+  LIBVIRT_DOMAIN_STATE_NAME_RUNNING = '起動中'
+  # ドメインステータス名：「停止中」
+  LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF = '停止中'
+
+  def get_domain_state_list
+    require_libvirt
+    domain_statte_list = {
+      Libvirt::Domain::RUNNING => LIBVIRT_DOMAIN_STATE_NAME_RUNNING,
+      Libvirt::Domain::SHUTOFF => LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF
+    }
+  end
+
+  # 与えられたドメインのステータスに該当する日本語名を返します。
+  def domain_state_name(state)
+    domain_state_list = get_domain_state_list
+    domain_state_list[state]
+  end
+
   # ハイパーバーザーのコネクションを取得する
   def open_hypervisor_connection
     require_libvirt
