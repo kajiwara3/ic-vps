@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627125250) do
+ActiveRecord::Schema.define(:version => 20120730125938) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name",            :null => false
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20120627125250) do
   end
 
   add_index "administrators", ["email"], :name => "index_administrators_on_email", :unique => true
+
+  create_table "domain_templates", :force => true do |t|
+    t.string   "name",       :null => false
+    t.text     "xml_data",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "notifications", :force => true do |t|
     t.text     "title",       :null => false
@@ -39,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20120627125250) do
     t.string   "address"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "email",                  :default => "", :null => false
+    t.string   "email",                                  :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

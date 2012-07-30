@@ -1,6 +1,24 @@
 # coding: utf-8
 
 module VpsManager
+  # ドメインのステータスが「起動中」。
+  DOMAIN_STATE_RUNNING = "軌道中"
+  DOMAIN_STATE_SHUTOFF = "停止中"
+
+  # ドメインのステータスとステータス名のハッシュを返します。
+  def domain_state_list
+    state_list = { Libvirt::Domain::RUNNING => DOMAIN_STATE_NAME_RUNNING,
+                   Libvirt::Domain::SHUTOFF => DOMAIN_STATE_NAME_SHUTOFF
+                 }
+  end
+
+  # 与えられたドメインのステータスに該当するステータス名を返します。
+  def domain_state_name(domain_state)
+    require_libvirt
+    state_list = domain_state
+    state_list[domain_state]
+  end
+  
   # ハイパーバーザーのコネクションを取得する
   def open_hypervisor_connection
     require_libvirt
@@ -31,7 +49,7 @@ module VpsManager
     begin
       conn == conn.lookup_domain_by_name(domain_name)
     rescue => e
-      raise e.class, "#{e.message}", e.backtrace
+      raise e.class, #{e.message}, e.backtrace
     end
   end
 
@@ -45,13 +63,13 @@ module VpsManager
   end
 
   # 指定したドメイン名に該当するドメインのインスタンスを起動する。
-  def startup_domain(domain)
+  def startup(domain)
     require_libvirt
     domain.create unless domain_running? domain
   end
 
   # 指定したドメインのインスタンスをシャットダウンします。
-  def shutdown_domain(domain)
+  def shutdown(domain)
     requre_libvirt
     domain.shutdown
   end

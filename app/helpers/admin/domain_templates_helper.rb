@@ -1,0 +1,2 @@
+module Admin::DomainTemplatesHelper
+end
