@@ -8,7 +8,7 @@ module VpsManager
 
   def get_domain_state_list
     require_libvirt
-    domain_statte_list = {
+    domain_state_list = {
       Libvirt::Domain::RUNNING => LIBVIRT_DOMAIN_STATE_NAME_RUNNING,
       Libvirt::Domain::SHUTOFF => LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF
     }

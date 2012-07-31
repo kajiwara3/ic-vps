@@ -29,6 +29,10 @@ IcVps::Application.routes.draw do
     resources :notifications do
       collection { get "search" }
     end
+    # ドメインテンプレート
+    resources :domain_templates do
+      collection { get "search" }
+    end
     # セッションリソース
     resource :session, only: [:create, :destroy]
   end
