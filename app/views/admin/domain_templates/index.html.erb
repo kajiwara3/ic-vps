@@ -1,1 +1,18 @@
-hello
+<% @title = "一覧" %>
+<h1><%= @title %></h1>
+<%= link_to "ドメインテンプレートを追加する", :new_admin_domain_template %>
+<table>
+  <tr>
+    <th>名前</th>
+    <th>登録日</th>
+  </tr>
+  <% @domain_list.each do |domain| %>
+    <tr>
+      <td><%= domain.name %></td>
+      <td>
+        <%= domain.created_at.strftime("%Y/%m/%d %H:%M")%>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @domain_list %>

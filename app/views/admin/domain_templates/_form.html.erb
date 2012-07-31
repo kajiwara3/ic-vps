@@ -1,0 +1,13 @@
+<%= render "shared/errors", obj: @domain%>
+<table>
+  <tr>
+    <th><%= form.label :name %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :xml_data %></th>
+    <td>
+      <%= form.file_field :xml_data %>
+    </td>
+  </tr>
+</table>
