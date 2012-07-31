@@ -19,6 +19,10 @@
     <th>稼働終了日時</th>
     <td><%= @server.expired_at.strftime("%Y/%m/%d %H:%M") %></td>
   </tr>
+  <tr>
+    <th>稼働状況</th>
+    <td><%= state_name "RHEL6_i386" %></td>
+  </tr>
 </table>
 <%= link_to "削除する", @server,
   method: :delete, confirm: "本当に削除しますか？"%>

@@ -2,7 +2,7 @@
 
 module VpsManager
   # ドメインステータス名：「起動中」
-  LIBVIRT_DOMAIN_STATE_NAME_RUNNING = '起動中'
+  LIBVIRT_DOMAIN_STATE_NAME_RUNNING = '稼働中'
   # ドメインステータス名：「停止中」
   LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF = '停止中'
 
@@ -12,6 +12,12 @@ module VpsManager
       Libvirt::Domain::RUNNING => LIBVIRT_DOMAIN_STATE_NAME_RUNNING,
       Libvirt::Domain::SHUTOFF => LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF
     }
+  end
+
+  def domain_state_name_via_domain_name(domain_name)
+    require_libvirt
+    domain = get_domain_connection_by_name(domain_name)
+    domain_state_name domain.info.state
   end
 
   # 与えられたドメインのステータスに該当する日本語名を返します。
