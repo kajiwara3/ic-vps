@@ -19,10 +19,10 @@ class Admin::DomainTemplatesController < ApplicationController
 
   # ドメインテンプレートの登録アクション
   def create
-    logger.debug(params[:domain_template])
+    # logger.debug(params[:domain_template])
     @domain = DomainTemplate.new(params[:domain_template])
     if @domain.save
-      redirect_to :admin_domain_template, notice: "ドメインテンプレートを追加しました"
+      redirect_to :admin_domain_templates, notice: "ドメインテンプレートを追加しました"
     else
       render "new"
     end
