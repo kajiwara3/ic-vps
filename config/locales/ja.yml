@@ -3,6 +3,7 @@ ja:
     models:
       partner: パートナー情報
       administrator: 管理者情報
+      domain_template: ドメインテンプレート
     attributes:
       partner:
         name: 名前
@@ -16,6 +17,9 @@ ja:
         email: メールアドレス
         password: ログインパスワード
         password_confirmation: 確認用パスワード
+      domain_template:
+        name: 名前
+        xml_data: XMLデータ
   will_paginate:
     previous_label: "前へ"
     next_label: "次へ"

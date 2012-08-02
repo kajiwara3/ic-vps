@@ -21,6 +21,9 @@ class Admin::DomainTemplatesController < ApplicationController
   def create
     # logger.debug(params[:domain_template])
     @domain = DomainTemplate.new(params[:domain_template])
+    xml_data = params[:domain_template][:xml_data].read if params[:domain_template][:xml_data]
+    @domain.name = params[:domain_template][:name]
+    @domain.xml_data = xml_data
     if @domain.save
       redirect_to :admin_domain_templates, notice: "ドメインテンプレートを追加しました"
     else
