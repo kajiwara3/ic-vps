@@ -12,11 +12,6 @@ class Admin::DomainTemplatesController < ApplicationController
     @domain_template = DomainTemplate.find(params[:id])
   end
 
-  # 登録済みドメインテンプレートの編集アクション。
-  def edit
-
-  end
-
   # ドメインテンプレートの登録画面表示アクション。
   def new
     @domain = DomainTemplate.new
