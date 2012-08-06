@@ -22,6 +22,24 @@ class Admin::DomainTemplatesController < ApplicationController
     @domain = DomainTemplate.new
   end
 
+  # ドメインテンプレート編集画面表示アクション。
+  def edit
+    @domain = DomainTemplate.find(params[:id])
+  end
+
+  # ドメインテンプレート更新アクション。
+  def update
+    @domain = DomainTemplate.find(params[:id])
+    xml_data = params[:domain_template][:xml_data].read if params[:domain_template][:xml_data]
+    @domain.name = params[:domain_template][:name]
+    @domain.xml_data = xml_data
+    if @domain.save
+      redirect_to :admin_domain_templates, notice: "ドメインテンプレートを追加しました"
+    else
+      render "edit"
+    end
+  end
+
   # ドメインテンプレートの登録アクション
   def create
     @domain = DomainTemplate.new(params[:domain_template])
