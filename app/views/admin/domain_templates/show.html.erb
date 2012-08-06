@@ -1,0 +1,21 @@
+<% @title = "詳細表示" %>
+<h1><%= @title %></h1>
+<%= link_to "一覧に戻る", :admin_domain_template %> |
+<%= link_to "編集する", [:edit, :admin, @domain_template] %>
+<table>
+  <tr>
+    <th>ID</th>
+    <td><%= @domain_template.id %></td>
+  </tr>
+  <tr>
+    <th>名前</th>
+    <td><%= @domain_template.name%></td>
+  </tr>
+  <tr>
+    <th>XMLデータ</th>
+    <td><%= @domain_template.xml_data %></td>
+  </tr>
+</table>
+<%= link_to "削除する", [:admin, @domain_template],
+  method: :delete, confirm: "本当に削除しますか？"%>
+

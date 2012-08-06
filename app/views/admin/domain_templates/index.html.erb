@@ -8,7 +8,9 @@
   </tr>
   <% @domain_list.each do |domain| %>
     <tr>
-      <td><%= domain.name %></td>
+      <td>
+        <%= link_to domain.name, [:admin, domain] %>
+      </td>
       <td>
         <%= domain.created_at.strftime("%Y/%m/%d %H:%M")%>
       </td>

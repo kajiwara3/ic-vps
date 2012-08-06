@@ -9,7 +9,12 @@ class Admin::DomainTemplatesController < ApplicationController
 
   # 登録済みドメインテンプレートの詳細表示アクション。
   def show
-    @domain = DomainTemplate(params[:id])
+    @domain_template = DomainTemplate.find(params[:id])
+  end
+
+  # 登録済みドメインテンプレートの編集アクション。
+  def edit
+
   end
 
   # ドメインテンプレートの登録画面表示アクション。
@@ -19,7 +24,6 @@ class Admin::DomainTemplatesController < ApplicationController
 
   # ドメインテンプレートの登録アクション
   def create
-    # logger.debug(params[:domain_template])
     @domain = DomainTemplate.new(params[:domain_template])
     xml_data = params[:domain_template][:xml_data].read if params[:domain_template][:xml_data]
     @domain.name = params[:domain_template][:name]
@@ -28,6 +32,15 @@ class Admin::DomainTemplatesController < ApplicationController
       redirect_to :admin_domain_templates, notice: "ドメインテンプレートを追加しました"
     else
       render "new"
+    end
+  end
+
+  def destroy
+    @domain_template = DomainTemplate.find(params[:id])
+    if @domain_template.destroy
+      redirect_to [:admin, @domain_template], notice: "ドメインテンプレート情報を削除しました"
+    else
+      render "show"
     end
   end
 end

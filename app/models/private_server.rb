@@ -7,4 +7,8 @@ class PrivateServer < ActiveRecord::Base
         where("released_at <= ? AND (? < expired_at OR " +
                "expired_at IS NULL)", now, now) }
 
+  # ドメインステータス名：「起動中」
+  LIBVIRT_DOMAIN_STATE_NAME_RUNNING = '稼働中'
+  # ドメインステータス名：「停止中」
+  LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF = '停止中'
 end

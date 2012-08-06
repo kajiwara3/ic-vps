@@ -1,16 +1,10 @@
 # coding: utf-8
-
 module VpsManager
-  # ドメインステータス名：「起動中」
-  LIBVIRT_DOMAIN_STATE_NAME_RUNNING = '稼働中'
-  # ドメインステータス名：「停止中」
-  LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF = '停止中'
-
   def get_domain_state_list
     require_libvirt
     domain_state_list = {
-      Libvirt::Domain::RUNNING => LIBVIRT_DOMAIN_STATE_NAME_RUNNING,
-      Libvirt::Domain::SHUTOFF => LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF
+      Libvirt::Domain::RUNNING => PrivateServer::LIBVIRT_DOMAIN_STATE_NAME_RUNNING,
+      Libvirt::Domain::SHUTOFF => PrivateServer::LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF
     }
   end
 
