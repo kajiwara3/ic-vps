@@ -1,6 +1,6 @@
 <% @title = "新規追加" %>
 <h1><%= @title %></h1>
-<%= link_to "一覧に戻る", :admin_partners %>
+<%= link_to "一覧に戻る", :admin_domain_templates %>
 <%= form_for [:admin, @domain], html:{ multipart: true } do |form| %>
   <%= render "form", form: form %>
   <p><%= form.submit %></p>

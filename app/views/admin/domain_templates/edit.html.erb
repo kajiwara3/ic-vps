@@ -1,7 +1,7 @@
 <% @title = "編集" %>
 <h1><%= @title %></h1>
-<%= link_to "一覧に戻る", :admin_domain_template %> |
-<%= link_to "パートナー詳細に戻る", [:admin, @domain]%>
+<%= link_to "一覧に戻る", :admin_domain_templates %> |
+<%= link_to "詳細情報に戻る", [:admin, @domain]%>
 <%= form_for [:admin, @domain] do |form| %>
   <%= render "form", form: form %>
   <p><%= form.submit %></p>
