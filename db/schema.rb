@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730125938) do
+ActiveRecord::Schema.define(:version => 20120807005801) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name",            :null => false
@@ -69,6 +69,9 @@ ActiveRecord::Schema.define(:version => 20120730125938) do
     t.text     "memo"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "tag"
   end
+
+  add_index "private_servers", ["tag"], :name => "index_private_servers_on_tag", :length => {"tag"=>10}
 
 end
