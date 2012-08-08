@@ -30,3 +30,4 @@ pickle-email-*.html
 vendor/bundle
 .settings
 config/environments/development.rb
+config/environments/development.rb
