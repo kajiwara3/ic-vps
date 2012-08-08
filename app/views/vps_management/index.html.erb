@@ -8,6 +8,7 @@ active list
     </li>
   </ul>
 <% end %>
+<br />
 
 defined list
 <% @defined_domain_list.each do |domain| %>
@@ -17,6 +18,7 @@ defined list
     </li>
   </ul>
 <% end %>
+<%= link_to "サーバーを追加する", [:new, current_partner, :partner] %>
 <table>
   <tr>
     <th>名前</th>
