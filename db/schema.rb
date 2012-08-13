@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20120813065915) do
     t.string   "address"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "email",                                  :null => false
+    t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -64,8 +64,6 @@ ActiveRecord::Schema.define(:version => 20120813065915) do
   create_table "private_servers", :force => true do |t|
     t.integer  "partner_id",          :null => false
     t.string   "name",                :null => false
-    t.datetime "released_at",         :null => false
-    t.datetime "expired_at"
     t.text     "memo"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false

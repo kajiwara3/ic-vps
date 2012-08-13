@@ -1,7 +1,7 @@
 # coding: utf-8
 class PrivateServer < ActiveRecord::Base
   belongs_to :partner
-  attr_accessible :partner_id, :name, :released_at, :expired_at, :memo
+  attr_accessible :partner_id, :private_server_code, :tag, :name, :memo
 
   scope :active_server,
     ->{ now = Time.current

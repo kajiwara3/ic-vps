@@ -31,3 +31,4 @@ vendor/bundle
 .settings
 config/environments/development.rb
 *.erm
+.DS_Store

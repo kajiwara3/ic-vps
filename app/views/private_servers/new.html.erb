@@ -1,1 +1,8 @@
-hey
+<% @title = "新規追加" %>
+<h1><%= @title %></h1>
+<%= link_to "一覧に戻る", vps_management_index_path %>
+
+<%= form_for @server do |form| %>
+  <%= render "form", form: form %>
+  <p><%= form.submit %></p>
+<% end %>

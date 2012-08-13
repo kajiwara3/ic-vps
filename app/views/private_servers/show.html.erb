@@ -8,16 +8,12 @@
     <td><%= @server.id %></td>
   </tr>
   <tr>
+    <th>タグ</th>
+    <td><%= @server.tag %></td>
+  </tr>
+  <tr>
     <th>名前</th>
     <td><%= @server.name %></td>
-  </tr>
-  <tr>
-    <th>稼働開始日時</th>
-    <td><%= @server.released_at.strftime("%Y/%m/%d %H:%M") %></td>
-  </tr>
-  <tr>
-    <th>稼働終了日時</th>
-    <td><%= @server.expired_at.strftime("%Y/%m/%d %H:%M") %></td>
   </tr>
   <tr>
     <th>稼働状況</th>
