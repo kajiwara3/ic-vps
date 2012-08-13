@@ -12,4 +12,6 @@ class PrivateServer < ActiveRecord::Base
   LIBVIRT_DOMAIN_STATE_NAME_RUNNING = '稼働中'
   # ドメインステータス名：「停止中」
   LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF = '停止中'
+  # ドメインステータス名：「不明」
+  LIBVIRT_DOMAIN_STATE_NAME_UNKNOWN = '状態を取得できません'
 end
