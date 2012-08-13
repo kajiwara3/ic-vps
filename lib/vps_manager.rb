@@ -24,6 +24,7 @@ module VpsManager
   def open_hypervisor_connection
     require_libvirt
     url = IcVps::Application.config.hypervisor_uri
+    logger.debug IcVps::Application.config.hypervisor_uri
     conn = Libvirt::open(url)
   end
 

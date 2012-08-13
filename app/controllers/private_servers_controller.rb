@@ -6,6 +6,10 @@ class PrivateServersController < ApplicationController
     @server = PrivateServer.find(params[:id])
   end
 
+  def new
+    @server = PrivateServer.new
+  end
+
   def destroy
   end
 

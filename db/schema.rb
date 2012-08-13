@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807005801) do
+ActiveRecord::Schema.define(:version => 20120813065915) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name",            :null => false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20120807005801) do
     t.string   "address"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "email",                  :default => "", :null => false
+    t.string   "email",                                  :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -62,16 +62,18 @@ ActiveRecord::Schema.define(:version => 20120807005801) do
   add_index "partners", ["reset_password_token"], :name => "index_partners_on_reset_password_token", :unique => true
 
   create_table "private_servers", :force => true do |t|
-    t.integer  "partner_id",  :null => false
-    t.string   "name",        :null => false
-    t.datetime "released_at", :null => false
+    t.integer  "partner_id",          :null => false
+    t.string   "name",                :null => false
+    t.datetime "released_at",         :null => false
     t.datetime "expired_at"
     t.text     "memo"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "tag"
+    t.string   "private_server_code", :null => false
   end
 
+  add_index "private_servers", ["private_server_code"], :name => "index_private_servers_on_private_server_code", :length => {"private_server_code"=>10}
   add_index "private_servers", ["tag"], :name => "index_private_servers_on_tag", :length => {"tag"=>10}
 
 end
