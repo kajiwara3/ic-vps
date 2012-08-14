@@ -8,6 +8,7 @@ class PrivateServersController < ApplicationController
 
   def new
     @server = PrivateServer.new
+    @domain_templates = DomainTemplate.order("id")
   end
 
   def destroy

@@ -5,6 +5,14 @@
     <td><%= form.text_field :tag %></td>
   </tr>
   <tr>
+    <th>
+      ドメインテンプレート
+    </th>
+    <td>
+      <%= form.collection_select :name, @domain_templates, :id, :name, { include_blank: "選択してください" } %>
+    </td>
+  </tr>
+  <tr>
     <th><%= form.label :name %></th>
     <td><%= form.text_field :name %></td>
   </tr>
