@@ -9,7 +9,11 @@
       ドメインテンプレート
     </th>
     <td>
-      <%= form.collection_select :name, @domain_templates, :id, :name, { include_blank: "選択してください" } %>
+      <%= form.collection_select :domain_template_id,
+                                  @domain_templates,
+                                  :id,
+                                  :name,
+                                  { include_blank: "選択してください" } %>
     </td>
   </tr>
   <tr>
@@ -21,3 +25,4 @@
     <td><%= form.text_area :memo, cols: 50, rows: 10 %></td>
   </tr>
 </table>
+<%= form.hidden_field :partner_id %>

@@ -8,7 +8,15 @@ class PrivateServersController < ApplicationController
 
   def new
     @server = PrivateServer.new
+    @server.partner_id = current_partner.id
     @domain_templates = DomainTemplate.order("id")
+  end
+
+  def create
+    @server = PrivateServer.new(params[:private_server])
+    @server.private_server_code = "1-2-2-server"
+    #@server.save
+    redirect_to "/vps_management", notice: "VPSを追加しました"
   end
 
   def destroy

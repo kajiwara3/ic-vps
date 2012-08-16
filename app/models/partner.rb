@@ -1,6 +1,8 @@
 # coding: utf-8
 class Partner < ActiveRecord::Base
   has_many :private_servers, dependent: :destroy
+  accepts_nested_attributes_for :private_servers, allow_destroy: true
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

@@ -6,14 +6,14 @@ class ApplicationController < ActionController::Base
 
   private
   def authorize
-    if session[:pertner_id]
-      @current_pertner = Pertner.find_by_id(session[:pertner_id])
-      session.delete(:pertner_id) unless @current_pertner
+    if session[:partner_id]
+        @current_partner = Partner.find_by_id(session[:partner_id])
+      session.delete(:partner_id) unless @current_partner
     end
   end
 
   def login_required
-    raise Forbidden unless @current_pertner
+    raise Forbidden unless @current_partner
   end
 
 end
