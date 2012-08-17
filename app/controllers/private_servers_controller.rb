@@ -15,7 +15,7 @@ class PrivateServersController < ApplicationController
   def create
     @server = PrivateServer.new(params[:private_server])
     @server.private_server_code = "1-2-2-server"
-    #@server.save
+    @server.save
     redirect_to "/vps_management", notice: "VPSを追加しました"
   end
 
