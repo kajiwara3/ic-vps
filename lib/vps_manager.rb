@@ -85,10 +85,8 @@ module VpsManager
   def startup(domain)
     require_libvirt
     begin
-      logger.debug("==================== domain state is: #{domain.info.state}")
       domain.create unless domain_running? domain
     rescue => e
-      logger.debug("==================== expection raise")
       raise e.class, e.message, e.backtrace
     end
   end
@@ -97,10 +95,8 @@ module VpsManager
   def shutdown(domain)
     require_libvirt
     begin
-      logger.debug("==================== domain state is: #{domain.info.state}")
       domain.shutdown if domain_running? domain
     rescue => e
-      logger.debug("==================== expection raise")
       raise e.class, e.message, e.backtrace
     end
   end
@@ -116,5 +112,19 @@ module VpsManager
   # ruby_libvirtを読み込む
   def require_libvirt
     require 'libvirt'
+  end
+
+  def set_domain_xml
+
+  end
+
+  def define_domain(domain_xml)
+    begin
+      require_libvirt
+      conn = open_hypervisor_connection
+      conn.define_domain_xml(domain_xml)
+    rescue => e
+      raise e.class, e.message, e.backtrace
+    end
   end
 end
