@@ -117,4 +117,8 @@ module VpsManager
   def require_libvirt
     require 'libvirt'
   end
+
+  def generate_private_server_code(private_server)
+    
+  end
 end
