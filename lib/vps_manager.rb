@@ -118,6 +118,7 @@ module VpsManager
 
   end
 
+  # 指定されたドメインテンプレートのxml情報を元に、ドメインを登録します。
   def define_domain(domain_xml)
     begin
       require_libvirt
