@@ -25,6 +25,7 @@ ja:
         tag: タグ
         name: 名前
         memo: メモ
+        domain_template_id: ドメインテンプレート
   will_paginate:
     previous_label: "前へ"
     next_label: "次へ"

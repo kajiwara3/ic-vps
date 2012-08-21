@@ -13,12 +13,35 @@ class PrivateServersController < ApplicationController
   end
 
   def create
+    require "rexml/document"
+    @server = PrivateServer.new(params[:private_server])
+    @server.private_server_code = generate_private_server_code(params[:private_server])
+    domain_template_id = params[:private_server][:domain_template_id]
+
     begin
-      @server = PrivateServer.new(params[:private_server])
-      @server.private_server_code = generate_private_server_code(params[:private_server])
+      domain_template = DomainTemplate.find(domain_template_id) if @server.valid?
+      xml_data = domain_template.xml_data
+      xmldoc = REXML::Document.new(xml_data)
+      elems = xmldoc.elements
+
+      xmldoc.elements['/domain/name'].text = params[:private_server][:name]
+      logger.debug("====================== 1")
+      logger.debug elems['/domain/name'].text
+      logger.debug("====================== 2")
+      logger.debug xmldoc
+      define_domain xmldoc.to_s
+      logger.debug("====================== 3")
+
+      @server.private_server_code = "1-2-2-server"
       @server.save
-      redirect_to "/vps_management", notice: "VPSを追加しました"
-    rescue
+
+      redirect_to "/vps_management", notice: "サーバーを追加しました"
+    rescue => e
+      logger.debug e.message
+
+      flash[:notice] = "サーバーの登録に失敗しました"
+      @domain_templates = DomainTemplate.order("id")
+      render "new"
     end
   end
 

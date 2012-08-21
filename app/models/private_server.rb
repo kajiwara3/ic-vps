@@ -3,6 +3,8 @@ class PrivateServer < ActiveRecord::Base
   belongs_to :partner
   attr_accessor :domain_template_id
   attr_accessible :partner_id, :private_server_code, :tag, :name, :memo, :domain_template_id
+  validates :name, presence: true, length: { maximum: 100 }
+  validates :domain_template_id, presence: { message: "を指定してください" }
 
   scope :active_server,
     ->{ now = Time.current
@@ -15,5 +17,4 @@ class PrivateServer < ActiveRecord::Base
   LIBVIRT_DOMAIN_STATE_NAME_SHUTOFF = '停止中'
   # ドメインステータス名：「不明」
   LIBVIRT_DOMAIN_STATE_NAME_UNKNOWN = '状態を取得できません'
-
 end
