@@ -14,9 +14,18 @@ class PrivateServersController < ApplicationController
 
   def create
     @server = PrivateServer.new(params[:private_server])
-    @server.private_server_code = "1-2-2-server"
-    @server.save
-    redirect_to "/vps_management", notice: "VPSを追加しました"
+    domain_template_id = params[:private_server][:domain_template_id]
+
+    begin
+      domain_template = DomainTemplate.find(domain_template_id) if @server.valid?
+      @server.private_server_code = "1-2-2-server"
+      @server.save
+
+      redirect_to "/vps_management", notice: "VPSを追加しました"
+    rescue
+      @domain_templates = DomainTemplate.order("id")
+      render "new"
+    end
   end
 
   def destroy
