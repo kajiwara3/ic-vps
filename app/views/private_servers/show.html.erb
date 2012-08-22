@@ -17,7 +17,7 @@
   </tr>
   <tr>
     <th>稼働状況</th>
-    <td><%= state_name "RHEL6_i386" %></td>
+    <td><%= state_name @server.name %></td>
   </tr>
 </table>
 <%= link_to "削除する", @server,
