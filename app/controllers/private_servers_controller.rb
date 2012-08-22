@@ -25,10 +25,10 @@ class PrivateServersController < ApplicationController
 
       xmldoc.elements['/domain/name'].text = params[:private_server][:name]
       logger.debug("====================== 1")
-      logger.debug elems['/domain/name'].text
+#      logger.debug elems['/domain/name'].text
       logger.debug("====================== 2")
-      logger.debug xmldoc
-      define_domain xmldoc.to_s
+      #logger.debug xmldoc
+#      define_domain xmldoc.to_s
       logger.debug("====================== 3")
 
       @server.private_server_code = "1-2-2-server"

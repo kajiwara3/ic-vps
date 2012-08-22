@@ -1,3 +1,4 @@
+# coding: utf-8
 class Administrator < ActiveRecord::Base
   include EmailAddressChecker
 

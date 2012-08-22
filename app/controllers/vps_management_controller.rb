@@ -1,4 +1,4 @@
-# coidng: utf-8
+# coding: utf-8
 class VpsManagementController < ApplicationController
   before_filter :authenticate_partner!
   include VpsManager
