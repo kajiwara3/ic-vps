@@ -15,6 +15,7 @@ class PrivateServersController < ApplicationController
   def create
     require "rexml/document"
     @server = PrivateServer.new(params[:private_server])
+    @server.private_server_code = generate_private_server_code(params[:private_server])
     domain_template_id = params[:private_server][:domain_template_id]
 
     begin

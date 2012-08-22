@@ -114,6 +114,10 @@ module VpsManager
     require 'libvirt'
   end
 
+  def generate_private_server_code(private_server)
+
+  end
+
   def set_domain_xml
 
   end
