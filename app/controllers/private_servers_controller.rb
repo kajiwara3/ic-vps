@@ -25,12 +25,9 @@ class PrivateServersController < ApplicationController
       elems = xmldoc.elements
 
       xmldoc.elements['/domain/name'].text = params[:private_server][:name]
-      logger.debug("====================== 1")
 #      logger.debug elems['/domain/name'].text
-      logger.debug("====================== 2")
       #logger.debug xmldoc
-#      define_domain xmldoc.to_s
-      logger.debug("====================== 3")
+      define_domain xmldoc.to_s
 
       @server.private_server_code = "1-2-2-server"
       @server.save
@@ -46,6 +43,29 @@ class PrivateServersController < ApplicationController
   end
 
   def destroy
+    logger.debug("====================== 1")
+    @private_server = PrivateServer.find(params[:id])
+    begin
+    logger.debug("====================== 2")
+      PrivateServer.transaction do
+        logger.debug("====================== 3")
+        @domain = get_domain_connection_by_name(@private_server.name)
+        logger.debug(@private_server.name)
+
+        logger.debug("====================== 4")
+        @domain.undefine
+        logger.debug("====================== 5")
+        @private_server.destroy
+        logger.debug("====================== 6")
+        @private_server.save
+        logger.debug("====================== 7")
+      end
+      redirect_to "/vps_managememt", notice: "ドメインを削除しました"
+    rescue => e
+      logger.debug("====================== error")
+      logger.debug e.message
+      redirect_to action: "show", notice: "削除に失敗しました"
+    end
   end
 
   # vpsインスタンス起動用アクション
@@ -53,6 +73,7 @@ class PrivateServersController < ApplicationController
     server_id = params[:server_id]
     @server = PrivateServer.find(server_id)
     domain_name = params[:domain_name]
+
     domain = get_domain_connection_by_name(domain_name)
     startup domain
     flash[:notice] = "サーバーを起動しました"

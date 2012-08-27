@@ -68,7 +68,7 @@ module VpsManager
       conn = open_hypervisor_connection
       conn.lookup_domain_by_name(domain_name)
     rescue => e
-      # raise e.class, e.message, e.backtrace
+       raise e.class, e.message, e.backtrace
     end
   end
 
@@ -119,7 +119,6 @@ module VpsManager
   end
 
   def set_domain_xml
-
   end
 
   # 指定されたドメインテンプレートのxml情報を元に、ドメインを登録します。
@@ -131,5 +130,10 @@ module VpsManager
     rescue => e
       raise e.class, e.message, e.backtrace
     end
+  end
+
+  # 指定されたドメインを削除する
+  def undefine_domain(domain)
+    domain.undefine
   end
 end

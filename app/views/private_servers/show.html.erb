@@ -20,17 +20,17 @@
     <td><%= state_name @server.name %></td>
   </tr>
 </table>
-<%= link_to "削除する", @server,
+<%= link_to "削除する", [current_partner, @server],
   method: :delete, confirm: "本当に削除しますか？"%>
 
 <%= form_tag({ action: "stop" }, {method: :put}) do %>
   <%= hidden_field_tag :server_id, @server.id %>
-  <%= hidden_field_tag :domain_name, "RHEL6_i386" %>
+  <%= hidden_field_tag :domain_name, @server.name %>
   <%= submit_tag "停止", confirm: "Are you sure?" %>
 <% end %>
 <%= form_tag({ action: "start" }, {method: :put}) do %>
   <%= hidden_field_tag :server_id, @server.id %>
-  <%= hidden_field_tag :domain_name, "RHEL6_i386" %>
+  <%= hidden_field_tag :domain_name, @server.name %>
   <%= submit_tag "起動", confirm: "Are you sure?" %>
 <% end %>
 
