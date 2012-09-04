@@ -10,9 +10,13 @@ module VpsManager
 
   def domain_state_name_via_domain_name(domain_name)
     require_libvirt
-    domain = get_domain_connection_by_name(domain_name)
-    domain.nil? ? PrivateServer::LIBVIRT_DOMAIN_STATE_NAME_UNKNOWN :
-                   domain_state_name(domain.info.state)
+    begin
+      domain = get_domain_connection_by_name(domain_name)
+      domain.nil? ? PrivateServer::LIBVIRT_DOMAIN_STATE_NAME_UNKNOWN :
+                     domain_state_name(domain.info.state)
+    rescue
+      PrivateServer::LIBVIRT_DOMAIN_STATE_NAME_UNKNOWN
+    end
   end
 
   # 与えられたドメインのステータスに該当する日本語名を返します。

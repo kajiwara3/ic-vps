@@ -43,28 +43,20 @@ class PrivateServersController < ApplicationController
   end
 
   def destroy
-    logger.debug("====================== 1")
     @private_server = PrivateServer.find(params[:id])
     begin
-    logger.debug("====================== 2")
       PrivateServer.transaction do
-        logger.debug("====================== 3")
         @domain = get_domain_connection_by_name(@private_server.name)
         logger.debug(@private_server.name)
-
-        logger.debug("====================== 4")
         @domain.undefine
-        logger.debug("====================== 5")
         @private_server.destroy
-        logger.debug("====================== 6")
         @private_server.save
-        logger.debug("====================== 7")
       end
       redirect_to "/vps_managememt", notice: "ドメインを削除しました"
     rescue => e
-      logger.debug("====================== error")
       logger.debug e.message
-      redirect_to action: "show", notice: "削除に失敗しました"
+      flash[:notice] = "削除に失敗しました"
+      redirect_to action: "show"
     end
   end
 
