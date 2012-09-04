@@ -1,6 +1,8 @@
 #coding: utf-8
 # 管理者によるドメインのひな形登録用モジュール
-class Admin::DomainTemplatesController < ApplicationController
+class Admin::DomainTemplatesController < Admin::Base
+  layout "admin_application"
+
   # 登録済みドメインテンプレートの一覧表示用アクション。
   def index
     @domain_list = DomainTemplate.order("id").

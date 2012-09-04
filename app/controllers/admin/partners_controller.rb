@@ -1,5 +1,7 @@
 #coding: utf-8
 class Admin::PartnersController < Admin::Base
+  layout "admin_application"
+
   add_crumb "パートナーTOP", "/admin/partners"
   # 一覧表示アクション
   def index

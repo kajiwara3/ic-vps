@@ -19,7 +19,7 @@
   <body>
     <div id="top">
       <div id="header">
-        <h1><a href="index.html">パートナー様用ページ</a></h1>
+        <h1><a href="index.html">管理者用ページ</a></h1>
         <div id="pr">
           <p>
             ここにサイトの説明文などをお書きください。ここにサイトの説明文などをお書きください。ここにサイトの説明文などをお書きください。
@@ -28,7 +28,7 @@
         </div>
         <!-- /#header -->
       </div>
-      <%= render "shared/menu_bar" %>
+      <%= render "shared/admin_menu_bar" %>
       <%= render "shared/topic_path"%>
       <% if flash.notice || flash.alert %>
         <p class="notice">
@@ -41,7 +41,7 @@
           <%= yield %>
         </div>
        <!-- /#main -->
-        <%= render "shared/side_menu" %>
+
         <div id="pageTop">
           <a href="#">ページのトップへ戻る</a>
           <!-- /#pageTop -->

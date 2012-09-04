@@ -10,8 +10,9 @@ class Admin::SessionsController < Admin::Base
     end
     redirect_to params[:from] || :root
   end
-  
+
   def destroy
+    flash.notice = "ログアウトしました"
     session.delete(:administrator_id)
     redirect_to :admin_root
   end

@@ -1,11 +1,13 @@
 # coding: utf-8
-class Admin::NotificationsController < ApplicationController
+class Admin::NotificationsController < Admin::Base
+  layout "admin_application"
+
   # 一覧表示アクション
   def index
     @notifications = Notification.order("id").
       paginate(page: params[:page], per_page: 5)
   end
-  
+
   # 詳細表示アクション
   def show
     @notification = Notification.find(params[:id])
@@ -20,7 +22,7 @@ class Admin::NotificationsController < ApplicationController
   def edit
     @notification = Notification.find(params[:id])
   end
-  
+
   # 新規作成アクション
   def create
     @notification = Notification.new(params[:notification])
@@ -30,7 +32,7 @@ class Admin::NotificationsController < ApplicationController
       render "new"
     end
   end
-  
+
   # 更新アクション
   def update
     @notification = Notification.find(params[:id])
@@ -41,7 +43,7 @@ class Admin::NotificationsController < ApplicationController
       render "edit"
     end
   end
-  
+
   # 削除アクション
   def destroy
     @notification = Notification.find(params[:id])
