@@ -1,4 +1,5 @@
 IcVps::Application.routes.draw do
+  # deviseを使ったユーザー認証
   devise_for :partners
 
   # パートナーページ用リソース
@@ -13,6 +14,9 @@ IcVps::Application.routes.draw do
   end
 
   resources :private_servers
+
+  resource :partner
+
   # アドミンページ用リソース
   namespace :admin do
     # 管理者トップ

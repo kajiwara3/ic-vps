@@ -1,0 +1,21 @@
+<% @title = "ご登録情報" %>
+<h1><%= @title %></h1>
+<%= link_to "編集する", "/partner/edit" %>
+<table>
+  <tr>
+    <th>ID</th>
+    <td><%= @partner.id %></td>
+  </tr>
+  <tr>
+    <th>お名前</th>
+    <td><%= @partner.name %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @partner.email %></td>
+  </tr>
+  <tr>
+    <th>ご住所</th>
+    <td><%= @partner.address %></td>
+  </tr>
+</table>

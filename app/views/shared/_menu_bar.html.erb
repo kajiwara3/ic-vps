@@ -1,46 +1,26 @@
 <div id="menu">
-  <% if controller.kind_of?(Admin::Base) %>
-    <ul>
+  <ul>
+    <li>
+      <%= link_to "IC-VPS トップ", :root %>
+    </li>
+    <li>
+      <%= link_to "サーバー管理", :vps_management_index %>
+    </li>
+    <li>
+      <%= link_to "アカウントサービス", '/partner' %>
+    </li>
+    <li>
+      <a href="#">ヘルプ</a>
+    </li>
+    <% if current_partner %>
       <li>
-        <%= link_to "システム管理TOP", :admin_root %>
+        <%= link_to "ログアウト", destroy_partner_session_path,
+            method: :delete, confirm: "ログアウトしますか？" %>
       </li>
+    <% else %>
       <li>
-        <a href="index.html">メニュー2</a>
+        <%= link_to "ログイン", new_partner_session_path %>
       </li>
-      <li>
-        <a href="index.html">メニュー3</a>
-      </li>
-      <li>
-        <a href="index.html">メニュー4</a>
-      </li>
-      <li>
-        <a href="index.html">メニュー5</a>
-      </li>
-    </ul>
-  <% else %>
-    <ul>
-      <li>
-        <%= link_to "IC-VPS トップ", :root %>
-      </li>
-      <li>
-        <%= link_to "サーバー管理", :vps_management_index %>
-      </li>
-      <li>
-        <a href="index.html">アカウントサービス</a>
-      </li>
-      <li>
-        <a href="index.html">ヘルプ</a>
-      </li>
-        <% if current_partner %>
-          <li>
-            <%= link_to "ログアウト", destroy_partner_session_path, method: :delete,
-                confirm: "ログアウトしますか？" %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "ログイン", new_partner_session_path %>
-          </li>
-        <% end %>
-    </ul>
-  <% end %>
+    <% end %>
+  </ul>
 </div>

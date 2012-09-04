@@ -1,0 +1,8 @@
+<% @title = "編集" %>
+<h1><%= @title %></h1>
+<%= link_to "戻る", '/partner' %>
+
+<%= form_for @partner do |form| %>
+  <%= render "form", form: form %>
+  <p><%= form.submit %></p>
+<% end %>
