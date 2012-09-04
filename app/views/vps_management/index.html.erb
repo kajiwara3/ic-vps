@@ -1,5 +1,28 @@
 <% @title = "TOP" %>
 <h1><%= @title %></h1>
+<%= link_to "サーバーを追加する", [:new, current_partner, :private_server] %>
+<table>
+  <tr>
+    <th>タグ</th>
+    <th>名前</th>
+    <th>登録日時</th>
+    <th>ステータス</th>
+  </tr>
+  <% @server_list.each do |server| %>
+    <tr>
+      <td><%= server.tag %></td>
+      <td><%= link_to server.name, [current_partner, server] %></td>
+      <td><%= server.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+      <td>-</td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @server_list %>
+
+<br />
+<br />
+debug data
+<hr />
 active list
 <% @active_domain_list.each do |domain| %>
   <ul>
@@ -19,21 +42,4 @@ defined list
     </li>
   </ul>
 <% end %>
-<%= link_to "サーバーを追加する", [:new, current_partner, :private_server] %>
-<table>
-  <tr>
-    <th>タグ</th>
-    <th>名前</th>
-    <th>登録日時</th>
-    <th>ステータス</th>
-  </tr>
-  <% @server_list.each do |server| %>
-    <tr>
-      <td><%= server.tag %></td>
-      <td><%= link_to server.name, [current_partner, server] %></td>
-      <td><%= server.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-      <td>-</td>
-    </tr>
-  <% end %>
-</table>
-<%= will_paginate @server_list %>
+

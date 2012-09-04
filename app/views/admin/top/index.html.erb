@@ -1,18 +1,4 @@
 <% @page_title = "パートナーページトップ" %>
-<% if @current_administrator.blank? %>
-  <%= render "shared/login_form" %>
-<% else %>
-  <ul>
-    <li><%= link_to "管理者管理", :admin_administrators %></li>
-    <li><%= link_to "パートナー管理", :admin_partners %></li>
-    <li><%= link_to "お知らせ管理", :admin_notifications %></li>
-    <li><%= link_to "サーバーテンプレート管理", :admin_domain_templates %></li>
-    <li>
-      <%= link_to "ログアウト", :admin_session, method: :delete,
-        confirm: "ログアウトしますか？" %>
-    </li>
-  </ul>
-
   <h2>未処理お問い合わせ</h2>
   <ul>
     <li>ああああああああああああ</li>
@@ -20,6 +6,9 @@
     <li>ああああああああああああ</li>
     <li>ああああああああああああ</li>
   </ul>
+お問い合わせ一覧へ
+<br />
+<br />
 
   <h2>お知らせ</h2>
   <ul>
@@ -28,5 +17,4 @@
     <li>あああああああああああああ</li>
     <li>あああああああああああああ</li>
   </ul>
-
-<% end %>
+お知らせ一覧へ
