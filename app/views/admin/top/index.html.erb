@@ -1,4 +1,7 @@
 <% @page_title = "パートナーページトップ" %>
+<% if @current_administrator.blank? %>
+  <%= render "shared/login_form" %>
+<% else %>
   <h2>未処理お問い合わせ</h2>
   <ul>
     <li>ああああああああああああ</li>
@@ -18,3 +21,4 @@
     <li>あああああああああああああ</li>
   </ul>
 お知らせ一覧へ
+<% end %>

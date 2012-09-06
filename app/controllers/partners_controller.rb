@@ -1,5 +1,7 @@
 # coding: utf-8
 class PartnersController < ApplicationController
+  before_filter :authenticate_partner!
+
   def show
     @partner = current_partner
   end
