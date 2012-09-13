@@ -18,10 +18,10 @@ rehearsal:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: dev_ic_vps
+  database: rehe_ic_vps
   pool: 5
-  username: dev_ic_vps
-  password: test
+  username: rehe_ic_vps
+  password: gY9RJbAh
   host: localhost
   timeout: 5000
 
