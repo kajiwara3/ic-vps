@@ -47,12 +47,39 @@ end
 # リハーサル環境用
 ################################################
 group :rehearsal do
+  gem 'rails', '3.2.2'
+  # Bundle edge Rails instead:
+  # gem 'rails', :git => 'git://github.com/rails/rails.git'
+  # mysql
+  gem 'mysql2'
+  # 国際化
+  gem 'rails-i18n'
+  #  ページング
+  gem 'will_paginate', '~> 3.0'
+  # パンくずリスト対応
+  gem 'crummy'
+  # ユーザー認証
+  gem "devise"
+  # KVMコントロール
+  gem 'ruby-libvirt'
+  # Gems used only for assets and not required
+  # in production environments by default.
+  group :assets do
+    gem 'sass-rails',   '~> 3.2.3'
+    gem 'coffee-rails', '~> 3.2.1'
+
+    # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+    # gem 'therubyracer'
+
+    gem 'uglifier', '>= 1.0.3'
+  end
+  gem 'jquery-rails'
+
   # Deploy with Capistrano
   gem 'rvm-capistrano'
-
   gem 'execjs'
   # Javascript run time
-  #gem 'therubyracer'
+  gem 'therubyracer'
 end
 
 ################################################
