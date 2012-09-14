@@ -142,6 +142,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   crummy
   devise
+  execjs
   factory_girl_rails (~> 1.4.0)
   jquery-rails
   mysql2
