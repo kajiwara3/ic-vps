@@ -77,7 +77,7 @@ group :rehearsal do
   # Deploy with Capistrano
   gem 'rvm-capistrano'
 
-  # gem 'execjs'
+  gem 'execjs'
   # Javascript run time
   # gem 'therubyracer'
 end
