@@ -79,7 +79,7 @@ group :rehearsal do
 
   gem 'execjs'
   # Javascript run time
-  # gem 'therubyracer'
+  gem 'therubyracer'
 end
 
 ################################################
