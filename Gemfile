@@ -78,6 +78,8 @@ group :rehearsal do
   gem 'rvm-capistrano'
 
   gem 'execjs'
+  # Javascript run time
+  gem 'therubyracer'
 end
 
 ################################################
