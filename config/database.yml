@@ -14,7 +14,7 @@ development:
   host: localhost
   timeout: 5000
 
-rehearsal:
+staging:
   adapter: mysql2
   encoding: utf8
   reconnect: false
@@ -45,7 +45,7 @@ production:
   reconnect: false
   database: ic_vps
   pool: 5
-  username: ic_vps
+  username: prod_ic_vps
   password: test
   host: localhost
   timeout: 5000

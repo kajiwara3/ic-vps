@@ -49,7 +49,7 @@ end
 ################################################
 # リハーサル環境用
 ################################################
-group :rehearsal do
+group :staging do
   gem 'rails', '3.2.2'
   # Bundle edge Rails instead:
   # gem 'rails', :git => 'git://github.com/rails/rails.git'
