@@ -51,7 +51,7 @@ set :scm, 'git'
 set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, true
-set :rails_env, :rehearsal
+set :rails_env, :staging
 
 namespace :deploy do
   desc "cause Passenger to initiate a restart"
