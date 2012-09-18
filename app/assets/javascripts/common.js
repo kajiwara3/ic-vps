@@ -20,6 +20,10 @@ $(function(){
    });
 
    $('#update_password').click(function() {
-     $('.password_elements').attr('disabled');
+     if ($(this).attr('checked')) {
+       $('.password_field').removeAttr('disabled');
+     } else {
+       $('.password_field').attr('disabled', 'disabled');
+     }
    });
 });

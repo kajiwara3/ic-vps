@@ -12,4 +12,23 @@
     <th><%= form.label :address %></th>
     <td><%= form.text_field :address %></td>
   </tr>
+  <tr>
+    <td colspan="2">
+      パスワードを変更する<%= check_box_tag 'update_password', 'yes', false %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :password %></th>
+    <td>
+      <%= form.password_field :password,
+            class: "password_field", disabled: "disabled" %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :password_confirmation %></th>
+    <td>
+      <%= form.password_field :password_confirmation,
+            class: "password_field", disabled: "disabled" %>
+    </td>
+  </tr>
 </table>
