@@ -18,4 +18,8 @@ $(function(){
       $($.browser.safari ? 'body' : 'html').animate({scrollTop:position}, speed, 'swing');
       return false;
    });
+
+   $('#update_password').click(function() {
+     $('.password_elements').attr('disabled');
+   });
 });

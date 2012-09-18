@@ -17,16 +17,16 @@
     <td><%= form.text_field :email %></td>
   </tr>
   <tr>
+    <td colspan="2">
+      パスワードを変更する<%= check_box_tag 'update_password', 'yes', false %>
+    </td>
+  </tr>
+  <tr>
     <th><%= form.label :password %></th>
-    <td><%= form.text_field :password %></td>
+    <td><%= form.password_field :password, class: "password_field" %></td>
   </tr>
   <tr>
     <th><%= form.label :password_confirmation %></th>
-    <td><%= form.text_field :password_confirmation %></td>
+    <td><%= form.password_field :password_confirmation %></td>
   </tr>
 </table>
-<% unless @partner.new_record? %>
-  <p>
-    パスワードを変更する場合のみパスワードを入力してください。
-  </p>
-<% end %>
