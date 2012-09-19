@@ -4,7 +4,7 @@ class Admin::NotificationsController < Admin::Base
 
   # 一覧表示アクション
   def index
-    @notifications = Notification.order("id").
+    @notifications = Notification.order("id desc").
       paginate(page: params[:page], per_page: 5)
   end
 
