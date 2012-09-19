@@ -48,7 +48,14 @@ role :db, domain, :primary => true
 # miscellaneous options
 set :deploy_via, :remote_cache
 set :scm, 'git'
-set :branch, 'master'
+# set :branch, 'master'
+set :branch do
+  default_tag = `git tag`.split("\n").last
+
+  tag = Capistrano::CLI.ui.ask "Tag to deploy (make sure to push the tag first): [#{default_tag}] "
+  tag = default_tag if tag.empty?
+  tag
+end
 set :scm_verbose, true
 set :use_sudo, true
 set :rails_env, :staging
@@ -77,5 +84,9 @@ task :bundle_install, :roles => :app do
 end
 
 after "deploy:update_code", :bundle_install
+
+# 本コマンド実行時に、デプロイ先に配置してあるdatabase.ymlのシンボリックリンクを設定する
 after "deploy:update","deploy:config_symlink"
+
+# 本コマンド実行時に、デプロイ先に配置してあるdatabase.ymlのシンボリックリンクを設定する
 before "deploy:migrate", "deploy:config_symlink"

@@ -1,0 +1,25 @@
+<% @title = "詳細表示" %>
+<h1><%= @title %></h1>
+<%= link_to "一覧に戻る", :notifications %> |
+<table>
+  <tr>
+    <th>ID</th>
+    <td><%= @notification.id %></td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @notification.title %></td>
+  </tr>
+  <tr>
+    <th>本文</th>
+    <td><%= simple_format(@notification.body) %></td>
+  </tr>
+  <tr>
+    <th>掲載開始日</th>
+    <td><%= @notification.released_at.try(:strftime, "%Y年%m月%d日") %></td>
+  </tr>
+  <tr>
+    <th>掲載終了日</th>
+    <td><%= @notification.expired_at.try(:strftime, "%Y年%m月%d日") %></td>
+  </tr>
+</table>

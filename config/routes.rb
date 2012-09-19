@@ -14,8 +14,8 @@ IcVps::Application.routes.draw do
   end
 
   resources :private_servers
-
   resource :partner
+  resources :notifications, only: [:index, :show]
 
   # アドミンページ用リソース
   namespace :admin do
