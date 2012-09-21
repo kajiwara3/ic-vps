@@ -48,7 +48,9 @@ role :db, domain, :primary => true
 # miscellaneous options
 set :deploy_via, :remote_cache
 set :scm, 'git'
-# set :branch, 'master'
+set :branch, 'master'
+
+=begin
 set :branch do
   default_tag = `git tag`.split("\n").last
 
@@ -56,6 +58,8 @@ set :branch do
   tag = default_tag if tag.empty?
   tag
 end
+=end
+
 set :scm_verbose, true
 set :use_sudo, true
 set :rails_env, :staging
