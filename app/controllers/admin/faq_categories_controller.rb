@@ -3,6 +3,7 @@ class Admin::FaqCategoriesController < Admin::Base
   layout "admin_application"
   # GET /admin/faq_categories
   # GET /admin/faq_categories.json
+  # 一覧表示アクション。
   def index
     @admin_faq_categories = Admin::FaqCategory.order(:id).
       paginate(page: params[:page], per_page: 5)
