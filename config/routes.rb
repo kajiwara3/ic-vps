@@ -39,5 +39,7 @@ IcVps::Application.routes.draw do
     end
     # セッションリソース
     resource :session, only: [:create, :destroy]
+
+    resources :faq_categories
   end
 end

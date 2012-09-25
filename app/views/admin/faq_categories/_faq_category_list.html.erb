@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>名前</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @admin_faq_categories.each do |admin_faq_category| %>
+  <tr>
+    <td><%= admin_faq_category.name %></td>
+    <td><%= link_to '詳細', admin_faq_category %></td>
+    <td><%= link_to '編集', edit_admin_faq_category_path(admin_faq_category) %></td>
+    <td><%= link_to '削除', admin_faq_category, confirm: '削除しますか?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
