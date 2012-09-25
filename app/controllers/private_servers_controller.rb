@@ -25,7 +25,7 @@ class PrivateServersController < ApplicationController
       elems = xmldoc.elements
 
       xmldoc.elements['/domain/name'].text = params[:private_server][:name]
-#      logger.debug elems['/domain/name'].text
+
       #logger.debug xmldoc
       define_domain xmldoc.to_s
 
