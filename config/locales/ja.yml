@@ -6,6 +6,7 @@ ja:
       domain_template: ドメインテンプレート
       private_server: プライベートサーバー
       admin/faq_category: FAQカテゴリー
+      faq: FAQ
     attributes:
       partner:
         name: 名前
@@ -28,7 +29,12 @@ ja:
         memo: メモ
         domain_template_id: ドメインテンプレート
       admin/faq_category:
-        name: 名前
+        name: カテゴリー名
+      faq:
+        admin_faq_category_id: カテゴリー名
+        question: 質問
+        answer: 回答
+        tag: タグ
   will_paginate:
     previous_label: "前へ"
     next_label: "次へ"

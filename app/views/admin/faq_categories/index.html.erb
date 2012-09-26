@@ -1,4 +1,6 @@
 <h1>FAQカテゴリー一覧</h1>
+<br />
+<%= link_to 'FAQのカテゴリーを追加する', new_admin_faq_category_path %>
 <div id="admin_list">
   <% if @admin_faq_categories %>
     <%= render "faq_category_list"%>
@@ -7,5 +9,3 @@
     表示できる管理者情報がありません
   <% end %>
 </div>
-
-<%= link_to '新規追加', new_admin_faq_category_path %>

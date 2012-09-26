@@ -39,7 +39,13 @@ IcVps::Application.routes.draw do
     end
     # セッションリソース
     resource :session, only: [:create, :destroy]
-
+    # FAQカテゴリー
     resources :faq_categories
+    # FAQ
+    resources :faqs do
+      collection { get "search" }
+    end
+    # UserSupport
+    resource :user_support
   end
 end
