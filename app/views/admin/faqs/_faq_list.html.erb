@@ -2,9 +2,9 @@
   <tr>
     <th><%= Faq.human_attribute_name('question') %></th>
   </tr>
-<% @faq_list.each do |faq| %>
-  <tr>
-    <td><%= faq.question %></td>
-  </tr>
-<% end %>
+  <% @faq_list.each do |faq| %>
+    <tr>
+      <td><%= faq.question %></td>
+    </tr>
+  <% end %>
 </table>
