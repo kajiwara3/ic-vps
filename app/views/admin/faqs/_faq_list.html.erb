@@ -1,10 +1,14 @@
 <table>
   <tr>
+    <th><%= Admin::FaqCategory.human_attribute_name('name') %></th>
     <th><%= Faq.human_attribute_name('question') %></th>
   </tr>
   <% @faq_list.each do |faq| %>
     <tr>
-      <td><%= faq.question %></td>
+      <td>
+        <%= faq.admin_faq_category.nil? ? '不明' : faq.admin_faq_category.name %>
+      </td>
+      <td><%= link_to faq.question, [:admin, faq] %></td>
     </tr>
   <% end %>
 </table>

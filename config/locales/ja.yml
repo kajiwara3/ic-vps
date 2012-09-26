@@ -31,6 +31,7 @@ ja:
       admin/faq_category:
         name: カテゴリー名
       faq:
+        id: ID
         admin_faq_category_id: カテゴリー名
         question: 質問
         answer: 回答

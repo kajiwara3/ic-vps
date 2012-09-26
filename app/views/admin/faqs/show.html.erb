@@ -1,0 +1,45 @@
+<h1>詳細</h1>
+<br />
+<%= link_to "一覧に戻る", :admin_faqs %>|<%= link_to "編集する", [:edit, :admin, @faq] %>
+<table>
+  <tr>
+    <th>
+      <%= Faq.human_attribute_name 'id' %>
+    </th>
+    <td>
+      <%= @faq.id %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= Faq.human_attribute_name 'admin_faq_category_id' %>
+    </th>
+    <td>
+      <%= @faq.admin_faq_category.nil? ? '不明' : @faq.admin_faq_category.name %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= Faq.human_attribute_name 'question' %>
+    </th>
+    <td>
+      <%= @faq.question %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= Faq.human_attribute_name 'answer' %>
+    </th>
+    <td>
+      <%= simple_format @faq.answer %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= Faq.human_attribute_name 'tag' %>
+    </th>
+    <td>
+      <%= simple_format @faq.tag %>
+    </td>
+  </tr>
+</table>
