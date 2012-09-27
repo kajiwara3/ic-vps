@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th><%= form.label :tag %></th>
+    <td><%= form.text_field :tag %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :admin_faq_category_id %></th>
+    <td>
+      <%= form.collection_select :admin_faq_category_id,
+                                  @faq_categories,
+                                  :id,
+                                  :name,
+                                  { include_blank: "選択してください" } %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :question %></th>
+    <td><%= form.text_field :question %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :answer %></th>
+    <td><%= form.text_area :answer, cols: 80 %></td>
+  </tr>
+</table>
+

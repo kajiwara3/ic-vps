@@ -1,0 +1,7 @@
+<h1>編集</h1>
+<br />
+<%= form_for [:admin, @faq] do |form| %>
+  <%= render "shared/errors", obj: @faq %>
+  <%= render 'form', form: form %>
+  <%= form.submit %>
+<% end %>
