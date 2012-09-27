@@ -1,9 +1,9 @@
 <h1>FAQ一覧</h1>
 <br />
-FAQを追加する |
-<%= link_to 'FAQのカテゴリーを追加する', new_admin_faq_category_path %>
+<%= link_to "FAQを追加する", :new_admin_faq %> |
+<%= link_to 'FAQのカテゴリーを追加する', :new_admin_faq_category %>
 <div id="faq_list">
-  <% if @faq_list %>
+  <% if @faq_list.length > 0 %>
     <%= render "faq_list"%>
     <%= will_paginate @faq_list %>
   <% else %>

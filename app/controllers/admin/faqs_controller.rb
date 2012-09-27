@@ -13,6 +13,24 @@ class Admin::FaqsController < Admin::Base
     @faq = Faq.find(params[:id])
   end
 
+  # 新規追加フォーム表示アクション。
+  def new
+    @faq_categories = Admin::FaqCategory.order(:id)
+    @faq = Faq.new
+  end
+
+  # 新規追加アクション
+  def create
+    @faq = Faq.new
+    @faq.assign_attributes params[:faq]
+    if !@faq.save
+      flash[:alert] = "FAQの作成に失敗しました"
+      @faq_categories = Admin::FaqCategory.order(:id)
+      return render 'new'
+    end
+    redirect_to :admin_faqs, notice: "FAQを追加しました"
+  end
+
   # 編集画面表示アクション。
   def edit
     @faq = Faq.find(params[:id])
@@ -25,6 +43,7 @@ class Admin::FaqsController < Admin::Base
     @faq.assign_attributes params[:faq]
 
     if !@faq.save
+      flash[:alert] = "FAQの更新に失敗しました"
       @faq_categories = Admin::FaqCategory.order(:id)
       return render "edit"
     end
