@@ -2,7 +2,9 @@ IcVps::Application.routes.draw do
   # deviseを使ったユーザー認証
   devise_for :partners
 
+  ###############################################
   # パートナーページ用リソース
+  ###############################################
   root to: "top#index", only: :index
   # VPS管理
   resources :vps_management
@@ -12,12 +14,28 @@ IcVps::Application.routes.draw do
       member { put "stop", "start", "reboot" }
     end
   end
-
+  # プライベートサーバー
   resources :private_servers
-  resource :partner
+  # パートナー（アカウントサービス）
+  resource :partner, only: [:show]
+  # お知らせ
   resources :notifications, only: [:index, :show]
+  # サポートページ
+  resource :user_support
+  # パートナー用FAQページ
+  resources :faqs, only: [:index, :show, :search] do
+    collection do
+      get "search"
+    end
+  end
+  # パートナー用FAQのカテゴリー別ページ
+  resources :faq_categories, only: [:index, :show] do
+    resources :faqs, only: [:index, :show]
+  end
 
+  ###############################################
   # アドミンページ用リソース
+  ###############################################
   namespace :admin do
     # 管理者トップ
     root to: "top#index"

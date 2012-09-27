@@ -1,0 +1,12 @@
+<h1>FAQ一覧</h1>
+<br />
+<%= link_to "カテゴリー別一覧", :faq_categories %>
+
+<div id="faq_list">
+  <% if @faq_list.length > 0 %>
+    <%= render "faq_list"%>
+    <%= will_paginate @faq_list %>
+  <% else %>
+    表示できるFAQがありません
+  <% end %>
+</div>
