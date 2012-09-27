@@ -1,0 +1,5 @@
+<ul>
+  <% @faq_list.each do |faq| %>
+    <li><%= link_to faq.question, faq %></li>
+  <% end %>
+</ul>

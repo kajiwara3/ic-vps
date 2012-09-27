@@ -1,0 +1,19 @@
+<%= link_to "一覧に戻る", :faqs %>
+<table>
+  <tr>
+    <th>
+      <%= Faq.human_attribute_name 'question' %>
+    </th>
+    <td>
+      <%= @faq.question %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= Faq.human_attribute_name 'answer' %>
+    </th>
+    <td>
+      <%= simple_format @faq.answer %>
+    </td>
+  </tr>
+</table>
