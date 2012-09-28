@@ -1,7 +1,16 @@
 <h1>FAQ一覧</h1>
 <br />
-<%= link_to "カテゴリー別一覧から探す", :faq_categories %>
+<p><%= link_to "カテゴリー別一覧から探す", :faq_categories %></p>
+<hr />
 
+質問から検索する
+<%= form_tag({controller: 'faqs', action: 'search'},
+              {method: :get}) do %>
+  <%= text_field_tag :question %>
+  <%= submit_tag '検索' %>
+<% end %>
+
+<hr />
 <div id="faq_list">
   <% if @faq_list.length > 0 %>
     <%= render "faq_list"%>
