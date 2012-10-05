@@ -17,7 +17,7 @@ IcVps::Application.routes.draw do
   # プライベートサーバー
   resources :private_servers
   # パートナー（アカウントサービス）
-  resource :partner, only: [:show]
+  resource :partner
   # お知らせ
   resources :notifications, only: [:index, :show]
   # サポートページ
