@@ -44,11 +44,11 @@ class Admin::FaqCategoriesController < Admin::Base
   # POST /admin/faq_categories
   # POST /admin/faq_categories.json
   def create
-    @admin_faq_category = FaqCategory.new(params[:admin_faq_category])
+    @admin_faq_category = FaqCategory.new(params[:faq_category])
 
     respond_to do |format|
       if @admin_faq_category.save
-        format.html { redirect_to @admin_faq_category, notice: 'FAQを追加しました' }
+        format.html { redirect_to [:admin, @admin_faq_category], notice: 'FAQを追加しました' }
         format.json { render json: @admin_faq_category, status: :created, location: @admin_faq_category }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class Admin::FaqCategoriesController < Admin::Base
 
     respond_to do |format|
       if @admin_faq_category.update_attributes(params[:admin_faq_category])
-        format.html { redirect_to @admin_faq_category, notice: 'FAQを更新しました' }
+        format.html { redirect_to [:admin, @admin_faq_category], notice: 'FAQを更新しました' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -1,5 +1,5 @@
 <%= render "shared/errors", obj: @admin_faq_category %>
-<%= form_for(@admin_faq_category) do |f| %>
+<%= form_for([:admin, @admin_faq_category]) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
