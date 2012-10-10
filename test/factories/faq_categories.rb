@@ -2,6 +2,5 @@
 
 FactoryGirl.define do
   factory :faq_category do
-    name "MyText"
   end
 end
