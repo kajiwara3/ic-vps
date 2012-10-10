@@ -5,7 +5,7 @@ class Admin::FaqCategoriesController < Admin::Base
   # GET /admin/faq_categories.json
   # 一覧表示アクション。
   def index
-    @admin_faq_categories = Admin::FaqCategory.order(:id).
+    @admin_faq_categories = FaqCategory.order(:id).
       paginate(page: params[:page], per_page: 5)
 
     respond_to do |format|
@@ -17,7 +17,7 @@ class Admin::FaqCategoriesController < Admin::Base
   # GET /admin/faq_categories/1
   # GET /admin/faq_categories/1.json
   def show
-    @admin_faq_category = Admin::FaqCategory.find(params[:id])
+    @admin_faq_category = FaqCategory.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +28,7 @@ class Admin::FaqCategoriesController < Admin::Base
   # GET /admin/faq_categories/new
   # GET /admin/faq_categories/new.json
   def new
-    @admin_faq_category = Admin::FaqCategory.new
+    @admin_faq_category = FaqCategory.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,13 +38,13 @@ class Admin::FaqCategoriesController < Admin::Base
 
   # GET /admin/faq_categories/1/edit
   def edit
-    @admin_faq_category = Admin::FaqCategory.find(params[:id])
+    @admin_faq_category = FaqCategory.find(params[:id])
   end
 
   # POST /admin/faq_categories
   # POST /admin/faq_categories.json
   def create
-    @admin_faq_category = Admin::FaqCategory.new(params[:admin_faq_category])
+    @admin_faq_category = FaqCategory.new(params[:admin_faq_category])
 
     respond_to do |format|
       if @admin_faq_category.save
@@ -60,7 +60,7 @@ class Admin::FaqCategoriesController < Admin::Base
   # PUT /admin/faq_categories/1
   # PUT /admin/faq_categories/1.json
   def update
-    @admin_faq_category = Admin::FaqCategory.find(params[:id])
+    @admin_faq_category = FaqCategory.find(params[:id])
 
     respond_to do |format|
       if @admin_faq_category.update_attributes(params[:admin_faq_category])
@@ -76,7 +76,7 @@ class Admin::FaqCategoriesController < Admin::Base
   # DELETE /admin/faq_categories/1
   # DELETE /admin/faq_categories/1.json
   def destroy
-    @admin_faq_category = Admin::FaqCategory.find(params[:id])
+    @admin_faq_category = FaqCategory.find(params[:id])
     @admin_faq_category.destroy
 
     respond_to do |format|
