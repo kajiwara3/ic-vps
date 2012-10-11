@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010085847) do
+ActiveRecord::Schema.define(:version => 20121011025421) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name",            :null => false
@@ -38,15 +38,15 @@ ActiveRecord::Schema.define(:version => 20121010085847) do
   end
 
   create_table "faqs", :force => true do |t|
-    t.integer  "admin_faq_category_id", :null => false
-    t.string   "question",              :null => false
-    t.text     "answer",                :null => false
+    t.string   "question",        :null => false
+    t.text     "answer",          :null => false
     t.string   "tag"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "faq_category_id"
   end
 
-  add_index "faqs", ["admin_faq_category_id"], :name => "index_faqs_on_admin_faq_category_id"
+  add_index "faqs", ["faq_category_id"], :name => "index_faqs_on_faq_category_id"
 
   create_table "notifications", :force => true do |t|
     t.text     "title",       :null => false
