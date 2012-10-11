@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :private_server do
     partner { Factory(:partner) }
     name "サーバー"
-    released_at 2.weeks.ago
-    expired_at 2.weeks.from_now
+    private_server_code "test_code"
+    domain_template_id 1
   end
 end
