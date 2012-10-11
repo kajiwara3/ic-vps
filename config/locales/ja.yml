@@ -5,7 +5,7 @@ ja:
       administrator: 管理者情報
       domain_template: ドメインテンプレート
       private_server: プライベートサーバー
-      admin/faq_category: FAQカテゴリー
+      faq_category: FAQカテゴリー
       faq: FAQ
     attributes:
       partner:
@@ -28,7 +28,7 @@ ja:
         name: 名前
         memo: メモ
         domain_template_id: ドメインテンプレート
-      admin/faq_category:
+      faq_category:
         name: カテゴリー名
       faq:
         id: ID
