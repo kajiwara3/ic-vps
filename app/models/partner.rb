@@ -18,7 +18,7 @@ class Partner < ActiveRecord::Base
   # バリデーションメソッド
   validates :name, presence: true, length: { maximum: 50 }
   validates :name_kana, presence: true, length: { maximum: 100 }
-  validates :address, presence: true, length: { maximum: 200 }
+  validates :address, presence: true, length: { maximum: 100 }
 #  validates :email, presence: true
 #  validate  :check_email
 #  validates :password, presence: { on: :create },

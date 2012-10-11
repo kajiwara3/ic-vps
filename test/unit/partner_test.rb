@@ -1,4 +1,4 @@
-#cocing: utf-8
+# coding: utf-8
 require 'test_helper'
 
 class PertnerTest < ActiveSupport::TestCase
@@ -19,5 +19,17 @@ class PertnerTest < ActiveSupport::TestCase
     assert partner.errors.include?(:name_kana)
     assert partner.errors.include?(:address)
     assert partner.errors.include?(:password)
+  end
+
+  test "name length 51" do
+    partner = Partner.new({
+      name: "あああああああああああああああああああああああああああああああああああああああああああああああああああ",
+      email: "test@a.com",
+      name_kana: "aaa",
+      address: "あああああ",
+      password: "pass"
+    })
+    partner.save
+    assert partner.errors.include?(:name)
   end
 end
