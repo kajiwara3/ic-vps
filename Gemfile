@@ -3,6 +3,12 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 
 ################################################
+# テスト環境用
+################################################
+group :test do
+  gem 'spork'
+end
+################################################
 # テスト・開発環境用
 ################################################
 group :test, :development do
@@ -44,6 +50,7 @@ group :test, :development do
   gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 
   gem 'factory_girl_rails', '~> 1.4.0'
+  gem 'rspec-rails'
 end
 
 ################################################
