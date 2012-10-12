@@ -12,6 +12,7 @@ class VpsManagementController < ApplicationController
                         paginate(page: params[:page], per_page: 5)
   end
 
+  # 詳細表示。
   def show
   end
 end

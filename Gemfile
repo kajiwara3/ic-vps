@@ -51,7 +51,8 @@ group :test, :development do
 
   gem 'factory_girl_rails', '~> 1.4.0'
   gem 'rspec-rails'
-  gem 'growl'
+  #gem 'growl'
+  gem 'ruby_gntp'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
