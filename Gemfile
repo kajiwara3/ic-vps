@@ -51,6 +51,11 @@ group :test, :development do
 
   gem 'factory_girl_rails', '~> 1.4.0'
   gem 'rspec-rails'
+  gem 'growl'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'rb-fsevent', :require => false
 end
 
 ################################################
