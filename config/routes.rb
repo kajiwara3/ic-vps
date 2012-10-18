@@ -65,5 +65,9 @@ IcVps::Application.routes.draw do
     end
     # UserSupport
     resource :user_support
+
+    resources :contacts do
+      collection { get "search"}
+    end
   end
 end
