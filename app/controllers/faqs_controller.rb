@@ -1,4 +1,5 @@
 class FaqsController < ApplicationController
+  before_filter :authenticate_partner!
   # 一覧アクション。
   def index
     faq_category_id = params[:faq_category_id]
