@@ -1,3 +1,4 @@
+<%= link_to "編集する", [:edit, :admin, @contact] %>
 <table>
   <tbody>
     <tr>
@@ -6,7 +7,7 @@
     </tr>
     <tr>
       <th><%= Contact.human_attribute_name "contact_status" %></th>
-      <td><%= @contact.cantact_status.name %></td>
+      <td><%= @contact.contact_status.name %></td>
     </tr>
     <tr>
       <th><%= Contact.human_attribute_name "subject" %></th>
