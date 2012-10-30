@@ -8,7 +8,7 @@
     <tr>
       <td><%= link_to faq.id, [:admin, faq] %></td>
       <td>
-        <%= faq.admin_faq_category.nil? ? '不明' : faq.admin_faq_category.name %>
+        <%= faq.faq_category.nil? ? '不明' : faq.faq_category.name %>
       </td>
       <td><%= link_to faq.question, [:admin, faq] %></td>
     </tr>
