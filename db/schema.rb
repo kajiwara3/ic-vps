@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20121018054038) do
     t.integer  "partner_id",        :null => false
     t.text     "subject"
     t.text     "body"
-    t.integer  "cantact_status_id"
+    t.integer  "contact_status_id"
     t.text     "memo"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
