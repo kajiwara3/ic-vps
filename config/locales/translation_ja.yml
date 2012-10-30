@@ -1,0 +1,73 @@
+ja:
+  activerecord:
+    models:
+      administrator: 管理者  #g
+      contact: お問い合わせ  #g
+      contact_status: お問い合わせ対応ステータス  #g
+      domain_template: サーバーテンプレート  #g
+      faq: FAQ  #g
+      faq_category: FAQカテゴリー  #g
+      notification: お知らせ  #g
+      partner: パートナー  #g
+      private_server: プライベートサーバー  #g
+
+    attributes:
+      administrator:
+        deleted_at: 削除日  #g
+        email: メールアドレス  #g
+        hashed_password: 暗号化パスワード  #g
+        name: 名前  #g
+
+      contact:
+        body: 本文  #g
+        cantact_status: お問い合わせステータス
+        memo: メモ  #g
+        partner: パートナー
+        subject: 題名  #g
+
+      contact_status:
+        contct: お問い合わせ  #g
+        name: 名前  #g
+
+      domain_template:
+        name: 名前  #g
+        xml_data: XMLデータ  #g
+
+      faq:
+        answer: 回答  #g
+        faq_category: カテゴリー
+        question: ご質問  #g
+        tag: タグ  #g
+
+      faq_category:
+        faqs: FAQ  #g
+        name: 名前  #g
+
+      notification:
+        body: 内容  #g
+        expired_at: expired_at  #g
+        released_at: released_at  #g
+        title: タイトル  #g
+
+      partner:
+        address: 住所  #g
+        contact: お問い合わせ  #g
+        current_sign_in_at: current_sign_in_at  #g
+        current_sign_in_ip: current_sign_in_ip  #g
+        email: メールアドレス  #g
+        encrypted_password: encrypted_password  #g
+        last_sign_in_at: last_sign_in_at  #g
+        last_sign_in_ip: last_sign_in_ip  #g
+        name: 名前  #g
+        name_kana: カナ  #g
+        private_servers: プライベートサーバー  #g
+        remember_created_at: remember_created_at  #g
+        reset_password_sent_at: reset_password_sent_at  #g
+        reset_password_token: reset_password_token  #g
+
+      private_server:
+        memo: メモ  #g
+        name: 名前  #g
+        partner: パートナー
+        private_server_code: プライベートサーバーコード  #g
+        tag: タグ  #g

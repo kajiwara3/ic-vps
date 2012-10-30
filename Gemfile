@@ -30,7 +30,8 @@ group :test, :development do
   gem 'ruby-libvirt'
   # Deploy with Capistrano
   gem 'rvm-capistrano'
-
+  # 国際化対応
+  gem 'i18n_generators'
   # Gems used only for assets and not required
   # in production environments by default.
   group :assets do
