@@ -73,3 +73,10 @@ ja:
         partner: パートナー
         private_server_code: プライベートサーバーコード  #g
         tag: タグ  #g
+  views:
+    pagination:
+      first: "«"
+      last: "»"
+      previous: "‹ 前"
+      next: "次 ›"
+      truncate: "..."
