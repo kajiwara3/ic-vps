@@ -11,7 +11,8 @@
     $status_name = "保留"
   end
   ContactStatus.create(
-    name: $status_name
+    name: $status_name,
+    contact_status_code: idx,
   )
 end
 def get_status_name idx

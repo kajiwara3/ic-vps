@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20121018054038) do
 
   create_table "contact_statuses", :force => true do |t|
     t.text     "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "contact_status_code"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "contacts", :force => true do |t|
