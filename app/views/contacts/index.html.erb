@@ -1,0 +1,22 @@
+<h2>お問い合わせ一覧（未完了以外）</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <td><%= Contact.human_attribute_name(:partner_id)%></td>
+      <td><%= Contact.human_attribute_name(:subject) %></td>
+      <td><%= Contact.human_attribute_name(:contact_status_id)%></td>
+      <td><%= Contact.human_attribute_name(:created_at) %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contact_list.each do |contact| %>
+      <tr>
+        <td><%= contact.partner.name %></td>
+        <td><%= contact.subject %></td>
+        <td><%= contact.contact_status.name %></td>
+        <td><%= contact.created_at.try(:strftime, "%Y年%m月%d日 %H時%M分") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @contact_list %>
