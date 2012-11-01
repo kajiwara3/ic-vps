@@ -1,6 +1,7 @@
 # coding: utf-8
 class ContactsController < ApplicationController
   def index
+    # 完了以外のステータスのみ返す
     contact_status_ids = ContactStatus.where("contact_status_code != ?", 2).select('id')
     @contact_list = Kaminari.paginate_array(current_partner.contacts.
       where(contact_status_id: contact_status_ids)).
