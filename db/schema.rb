@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(:version => 20121018054038) do
   end
 
   create_table "contacts", :force => true do |t|
-    t.integer  "partner_id",        :null => false
+    t.integer  "partner_id",                       :null => false
     t.text     "subject"
     t.text     "body"
-    t.integer  "contact_status_id"
+    t.integer  "contact_status_id", :default => 1
     t.text     "memo"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "domain_templates", :force => true do |t|

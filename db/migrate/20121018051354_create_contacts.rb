@@ -4,7 +4,7 @@ class CreateContacts < ActiveRecord::Migration
       t.references :partner, null: false
       t.text :subject
       t.text :body
-      t.references :contact_status
+      t.references :contact_status, default: 1
       t.text :memo
       t.timestamps
     end
