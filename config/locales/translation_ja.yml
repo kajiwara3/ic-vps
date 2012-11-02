@@ -20,7 +20,7 @@ ja:
 
       contact:
         body: 本文  #g
-        contact_status: お問い合わせステータス
+        contact_status: お問い合わせ状況
         memo: メモ  #g
         partner: パートナー
         subject: 題名  #g

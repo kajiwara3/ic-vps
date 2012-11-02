@@ -18,11 +18,11 @@ IcVps::Application.routes.draw do
   resources :private_servers
   # パートナー（アカウントサービス）
   resource :partner do
-    # お問い合わせ
-    resources :contacts do
-  end
 
   end
+  # お問い合わせ
+  resources :contacts, only: [:index, :show, :new, :create]
+
   # お知らせ
   resources :notifications, only: [:index, :show]
   # サポートページ

@@ -1,0 +1,21 @@
+<%= link_to "一覧に戻る", :contacts %>
+<table>
+  <tbody>
+    <tr>
+      <th><%= Contact.human_attribute_name "contact_status" %></th>
+      <td><%= @contact.contact_status.name %></td>
+    </tr>
+    <tr>
+      <th><%= Contact.human_attribute_name "subject" %></th>
+      <td><%= @contact.subject %></td>
+    </tr>
+    <tr>
+      <th><%= Contact.human_attribute_name "body" %></th>
+      <td><%= simple_format @contact.body %></td>
+    </tr>
+    <tr>
+      <th><%= Contact.human_attribute_name "created_at" %></th>
+      <td><%= l @contact.created_at, format: :default %></td>
+    </tr>
+  </tbody>
+</table>

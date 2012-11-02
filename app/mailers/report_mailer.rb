@@ -9,6 +9,6 @@ class ReportMailer < ActionMailer::Base
   def contact_received
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: IcVps::Application.config.notification_email
   end
 end

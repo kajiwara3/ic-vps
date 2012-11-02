@@ -1,0 +1,22 @@
+<h2>お問い合わせフォーム</h2>
+<%= render "shared/errors", obj: @contact%>
+<table>
+  <tbody>
+    <tr>
+      <th>
+        <%= form.label :subject %>
+      </th>
+      <td>
+        <%= form.text_field :subject %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <%= form.label :body %>
+      </th>
+      <td>
+        <%= form.text_area :body, cols: 50, rows: 10 %>
+      </td>
+    </tr>
+  </tbody>
+</table>
