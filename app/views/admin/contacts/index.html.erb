@@ -13,7 +13,7 @@
         <td><%= link_to contact.partner.name, [:admin, contact] %></td>
         <td><%= contact.subject %></td>
         <td><%= contact.contact_status.name %></td>
-        <td><%= contact.created_at.try(:strftime, "%Y年%m月%d日 %H時%M分") %></td>
+        <td><%= l contact.created_at, format: :default %></td>
       </tr>
     <% end %>
   </tbody>
