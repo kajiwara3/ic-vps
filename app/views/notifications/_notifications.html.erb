@@ -1,0 +1,23 @@
+<div id="notifications" class="abc">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>本文</th>
+      <th>公開開始日</th>
+      <th>公開終了日</th>
+    </tr>
+    <% @notifications.each do |notification| %>
+      <tr>
+        <td><%= notification.id %></td>
+        <td>
+          <%= link_to notification.title, notification %>
+        </td>
+        <td><%= truncate(notification.body, length: 10) %></td>
+        <td><%= notification.released_at.try(:strftime, "%Y年%m月%d日") %></td>
+        <td><%= notification.expired_at.try(:strftime, "%Y年%m月%d日") %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= paginate @notifications, remote: true %>
+</div>

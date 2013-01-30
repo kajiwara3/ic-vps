@@ -75,8 +75,8 @@ ja:
         tag: タグ  #g
   views:
     pagination:
-      first: "«"
-      last: "»"
-      previous: "‹ 前"
-      next: "次 ›"
-      truncate: "..."
+      first: '<<'
+      last: '>>'
+      previous: '< 前'
+      next: '次 >'
+      truncate: '...'
