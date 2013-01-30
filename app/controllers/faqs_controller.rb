@@ -4,7 +4,7 @@ class FaqsController < ApplicationController
   def index
     faq_category_id = params[:faq_category_id]
     if faq_category_id
-      @faq_list = Faq.where("admin_faq_category_id = ?", faq_category_id).order(:id).
+      @faq_list = Faq.where("faq_category_id = ?", faq_category_id).order(:id).
         paginate(page: params[:page], per_page: 5)
       return
     end
