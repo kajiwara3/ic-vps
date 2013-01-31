@@ -37,6 +37,8 @@ group :test, :development do
   gem 'ransack'
   # loading spinner
   gem 'spinjs-rails'
+  # datapicker
+  gem 'jquery_datepicker'
 
   # Gems used only for assets and not required
   # in production environments by default.

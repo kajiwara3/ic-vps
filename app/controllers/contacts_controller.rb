@@ -2,11 +2,17 @@
 class ContactsController < ApplicationController
   before_filter :authenticate_partner!
   def index
-    # ログインしているアカウントの問い合わせのうち、完了以外のステータスのみ返す
-    contact_status_ids = ContactStatus.where("contact_status_code != ?", 2).select('id')
-    @contact_list = Kaminari.paginate_array(current_partner.contacts.
-      where(contact_status_id: contact_status_ids)).
-      page(params[:page]).per(5)
+    @contact_statuses = ContactStatus.all
+    #logger current_partner.id
+    @search = Contact.search(params[:q])
+    # @contact_list = Kaminari.paginate_array(@search.result).page(params[:page]).per(5)
+    @contact_list = Kaminari.paginate_array(@search.result.
+                                            onry_current_partner current_partner).
+                                            page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

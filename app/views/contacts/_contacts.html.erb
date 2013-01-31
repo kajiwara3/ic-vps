@@ -1,0 +1,21 @@
+<div id="contacts" class="abc">
+  <table class="table">
+    <thead>
+      <tr>
+        <td><%= Contact.human_attribute_name(:subject) %></td>
+        <td><%= Contact.human_attribute_name(:contact_status)%></td>
+        <td><%= Contact.human_attribute_name(:created_at) %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contact_list.each do |contact| %>
+        <tr>
+          <td><%= link_to contact.subject, contact %></td>
+          <td><%= contact.contact_status.name %></td>
+          <td><%= l contact.created_at, format: :default %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @contact_list, remote: true %>
+</div>

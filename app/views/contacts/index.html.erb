@@ -1,20 +1,30 @@
-<h2>お問い合わせ一覧（未完了以外）</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <td><%= Contact.human_attribute_name(:subject) %></td>
-      <td><%= Contact.human_attribute_name(:contact_status)%></td>
-      <td><%= Contact.human_attribute_name(:created_at) %></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @contact_list.each do |contact| %>
-      <tr>
-        <td><%= link_to contact.subject, contact %></td>
-        <td><%= contact.contact_status.name %></td>
-        <td><%= l contact.created_at, format: :default %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= paginate @contact_list %>
+<h2>お問い合わせ一覧</h2>
+<%= search_form_for @search, html: {class: 'form-sarch'}, remote: true do |f| %>
+  <div class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_status_id %>
+    <%= f.collection_select(:contact_status_id_eq,
+                            @contact_statuses,
+                            :id,
+                            :name,
+                            {include_blank: "---"})
+                            %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at_gteq, '受付日時' %>
+    <%= f.datepicker :created_at_gteq %>
+    <%= f.label :created_at_lteq, '〜' %>
+    <%= f.text_field :created_at_lteq %>
+  </div>
+  <div class="actions">
+    <%= f.submit "検索する", class: "search-button" %>
+  </div>
+<% end %>
+<%= render "contacts" %>
