@@ -1,4 +1,4 @@
 <%= form_for @contact do |form| %>
   <%= render "form", form: form %>
-  <%= form.submit %>
+  <%= form.submit confirm: "この内容で送信しますか？" %>
 <% end %>
