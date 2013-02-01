@@ -19,4 +19,5 @@
 $(function(){
   $(".abc").on("ajax:beforeSend", function(){$(".abc").spin({color: '#888'});});
   $(".search-button").click(function(){$(".abc").spin({color: '#888'});});
+  $('.datepicker').datepicker({ dateFormat: 'yy/mm/dd' });
 });

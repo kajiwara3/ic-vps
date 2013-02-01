@@ -1,15 +1,15 @@
 <h2>お問い合わせ一覧</h2>
-<%= search_form_for @search, html: {class: 'form-sarch'}, remote: true do |f| %>
+<%= search_form_for(@search, html: {class: 'form-sarch'}, remote: true) do |f| %>
   <div class="field">
-    <%= f.label :subject %>
+    <%= f.label :subject, '題名' %>
     <%= f.text_field :subject_cont %>
   </div>
   <div class="field">
-    <%= f.label :body %>
-    <%= f.text_field :body_cont %>
+    <%= f.label :body, '本文' %>
+    <%= f.text_field :body_cont%>
   </div>
   <div class="field">
-    <%= f.label :contact_status_id %>
+    <%= f.label :contact_status_id, "お問い合わせ状況" %>
     <%= f.collection_select(:contact_status_id_eq,
                             @contact_statuses,
                             :id,
@@ -18,10 +18,8 @@
                             %>
   </div>
   <div class="field">
-    <%= f.label :created_at_gteq, '受付日時' %>
-    <%= f.datepicker :created_at_gteq %>
-    <%= f.label :created_at_lteq, '〜' %>
-    <%= f.text_field :created_at_lteq %>
+    <%= f.datepicker 'created_at_gteq', class: "datepicker" %>
+    <%= f.datepicker 'created_at_lteq', class: "datepicker" %>
   </div>
   <div class="actions">
     <%= f.submit "検索する", class: "search-button" %>

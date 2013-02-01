@@ -18,6 +18,8 @@ group :test, :development do
   # gem 'sqlite3'
   # mysql
   gem 'mysql2'
+
+  # レンダリング関連
   # 国際化
   gem 'rails-i18n'
   #  ページング
@@ -25,34 +27,37 @@ group :test, :development do
   gem 'kaminari'
   # パンくずリスト対応
   gem 'crummy'
+  # フォーム表示
+  gem 'simple_form'
+  # Search form
+  gem 'ransack'
+  # loading spinner
+  gem 'spinjs-rails'
+  # datapicker
+  gem "jquery_datepicker"
+
+  # 国際化対応
+  gem 'i18n_generators'
+  group :assets do
+    gem 'sass-rails',   '~> 3.2.3'
+    gem 'coffee-rails', '~> 3.2.1'
+    # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+    # gem 'therubyracer'
+    gem 'uglifier', '>= 1.0.3'
+    gem 'jquery-ui-rails'
+  end
+  gem 'jquery-rails'
+  gem "jquery-ui-themes"
+
   # ユーザー認証
   gem "devise"
   # KVMコントロール
   gem 'ruby-libvirt'
   # Deploy with Capistrano
   gem 'rvm-capistrano'
-  # 国際化対応
-  gem 'i18n_generators'
-  # Search form
-  gem 'ransack'
-  # loading spinner
-  gem 'spinjs-rails'
-  # datapicker
-  gem 'jquery_datepicker'
 
   # Gems used only for assets and not required
   # in production environments by default.
-  group :assets do
-    gem 'sass-rails',   '~> 3.2.3'
-    gem 'coffee-rails', '~> 3.2.1'
-
-    # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-    # gem 'therubyracer'
-
-    gem 'uglifier', '>= 1.0.3'
-  end
-
-  gem 'jquery-rails'
 
   # To use ActiveModel has_secure_password
   gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
