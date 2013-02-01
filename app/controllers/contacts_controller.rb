@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
     # @contact_list = Kaminari.paginate_array(@search.result).page(params[:page]).per(5)
     @contact_list = Kaminari.paginate_array(@search.result.
                                             onry_current_partner current_partner).
-                                            page(params[:page]).per(5)
+                                            page(params[:page]).per(10)
     respond_to do |format|
       format.html
       format.js

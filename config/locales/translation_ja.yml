@@ -21,6 +21,7 @@ ja:
       contact:
         body: 本文  #g
         contact_status_id: お問い合わせ状況
+        contact_status: お問い合わせ状況
         memo: メモ  #g
         partner: パートナー
         subject: 題名  #g
