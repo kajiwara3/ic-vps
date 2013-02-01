@@ -18,7 +18,9 @@
                             %>
   </div>
   <div class="field">
+    <%= f.label :created_at_gteq, '受付日時' %>
     <%= f.datepicker 'created_at_gteq', class: "datepicker" %>
+    <%= f.label :created_at_lteq, '〜' %>
     <%= f.datepicker 'created_at_lteq', class: "datepicker" %>
   </div>
   <div class="actions">
