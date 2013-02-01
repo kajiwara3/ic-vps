@@ -3,9 +3,7 @@ class ContactsController < ApplicationController
   before_filter :authenticate_partner!
   def index
     @contact_statuses = ContactStatus.all
-    #logger current_partner.id
     @search = Contact.search(params[:q])
-    # @contact_list = Kaminari.paginate_array(@search.result).page(params[:page]).per(5)
     @contact_list = Kaminari.paginate_array(@search.result.
                                             onry_current_partner current_partner).
                                             page(params[:page]).per(10)

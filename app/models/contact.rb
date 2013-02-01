@@ -5,6 +5,6 @@ class Contact < ActiveRecord::Base
 
   scope :onry_current_partner,
     lambda {|partner|
-      where 'partner_id = ?', partner.id
+      where('partner_id = ?', partner.id).order("id desc")
     }
 end
