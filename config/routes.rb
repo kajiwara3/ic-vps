@@ -37,6 +37,8 @@ IcVps::Application.routes.draw do
   resources :faq_categories, only: [:index, :show] do
     resources :faqs, only: [:index, :show]
   end
+  # staticページ
+  get "/page/:action" => "pages#:action"
 
   ###############################################
   # アドミンページ用リソース
