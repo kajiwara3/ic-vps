@@ -47,7 +47,7 @@ class PrivateServersController < ApplicationController
     begin
       PrivateServer.transaction do
         @domain = get_domain_connection_by_name(@private_server.name)
-        logger.debug(@private_server.name)
+        # logger.debug(@private_server.name)
         @domain.undefine
         @private_server.destroy
         @private_server.save
