@@ -86,6 +86,14 @@ h1,h2,h3,h4,h5,h6 {
    background:#fff;
 }
 
+#main_admin {
+   display:inline;/* for IE6 */
+   float:left;
+   width:755px;
+   padding:10px;
+   background:#fff;
+}
+
 #sub {
    display:inline;/* for IE6 */
    float:right;
@@ -172,14 +180,14 @@ h1,h2,h3,h4,h5,h6 {
 
 
 /* ========MAIN CONTENTS CUSTOMIZE======== */
-#main h2 {
+#main h2, #main_admin h2 {
    margin-bottom:5px;
    padding:5px 0;
    font-size:16px;
    border-bottom:3px double #999;
 }
 
-#main h3 {
+#main h3, #main_admin h3 {
    margin-bottom:5px;
    padding:5px;
    font-size:14px;
@@ -187,7 +195,7 @@ h1,h2,h3,h4,h5,h6 {
    border-bottom:1px dotted #999;
 }
 
-#main h4 {
+#main h4, #main_admin h4 {
    margin-bottom:5px;
    padding:5px;
    font-size:13px;
@@ -195,26 +203,26 @@ h1,h2,h3,h4,h5,h6 {
    background:#0089a1;
 }
 
-#main h5 {
+#main h5, #main_admin h5 {
    margin-bottom:5px;
    font-size:13px;
    border-bottom:1px dotted #999;
 }
 
-#main h6 {
+#main h6, #main_admin h6 {
    margin-bottom:5px;
    font-size:13px;
 }
 
-#main p {
+#main p, #main_admin p {
    margin:0 0 1em 0;
 }
 
-#main dt {
+#main dt, #main_admin dt {
    margin-bottom:3px;
 }
 
-#main dd {
+#main dd, #main_admin dd {
    padding:0;
    margin:0 0 0.5em 1em;
    padding:3px;
@@ -226,25 +234,29 @@ h1,h2,h3,h4,h5,h6 {
    display:inline-block;
 }
 
-#main dl.information dt {
+#main dl.information dt, #main_admin dl.information dt {
    float:left;
    width:8em;
    margin:0;
    padding:0;
 }
 
-#main dl.information dd {
+#main dl.information dd, #main_admin dl.information dd {
    margin:0 0 0.5em 8em;
    padding:0;
    background:transparent;
 }
 
-#main table {
+#main table, #main_admin table {
    width:100%;
    border-collapse:collapse;
 }
 
-#main table th {
+#main_admin table thead th {
+   text-align:left;
+}
+
+#main table th, #main_admin table th {
    padding:5px;
    font-size:12px;
    text-align:left;
@@ -252,7 +264,7 @@ h1,h2,h3,h4,h5,h6 {
    background:#f0f7fc;
 }
 
-#main table td {
+#main table td, #main_admin table td {
    padding:5px;
    font-size:12px;
    text-align:left;
@@ -290,7 +302,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #sub li a {
-   /zoom:1;/* for IE6 */
+   zoom:1;/* for IE6 */
    display:block;
    padding:10px 5px;
    border-left:5px solid #0089a1;
