@@ -1,0 +1,21 @@
+<div id="myservers" class="abc">
+  <table>
+    <thead>
+      <tr>
+        <th><%= PrivateServer.human_attribute_name 'tag'%></th>
+        <th><%= PrivateServer.human_attribute_name 'name'%></th>
+        <th><%= PrivateServer.human_attribute_name 'memo'%></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @private_servers.each do |server| %>
+        <tr>
+          <td><%= server.tag %></td>
+          <td><%= server.name %></td>
+          <td><%= server.memo %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @private_servers %>
+</div>

@@ -49,7 +49,11 @@ IcVps::Application.routes.draw do
     # パートナーリソース
     resources :partners do
       collection { get "search" }
+      # プライベートサーバー
+      resources :private_servers
     end
+    # プライベートサーバー
+    resources :private_servers
     # アドミンリソース
     resources :administrators do
       collection { get "search" }

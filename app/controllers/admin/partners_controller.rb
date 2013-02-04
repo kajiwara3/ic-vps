@@ -17,6 +17,8 @@ class Admin::PartnersController < Admin::Base
   def show
     add_crumb "パートナー詳細", "/admin/partners/#{params[:id]}"
     @partner = Partner.find(params[:id])
+    @private_servers = Kaminari.paginate_array(PrivateServer.myservers @partner).
+                        page(params[:page]).per(5)
   end
 
   # パートナー追加フォーム表示アクション

@@ -4,12 +4,17 @@ class PrivateServer < ActiveRecord::Base
   attr_accessor :domain_template_id
   attr_accessible :partner_id, :private_server_code, :tag, :name, :memo, :domain_template_id
   validates :name, presence: true, length: { maximum: 100 }
-  validates :domain_template_id, presence: { message: "を指定してください" }
+  #validates :domain_template_id, presence: { message: "を指定してください" }
 
   scope :active_server,
     ->{ now = Time.current
         where("released_at <= ? AND (? < expired_at OR " +
                "expired_at IS NULL)", now, now) }
+
+  scope :myservers,
+    lambda {|partner|
+        where("partner_id = ?", partner.id)
+      }
 
   # ドメインステータス名：「起動中」
   LIBVIRT_DOMAIN_STATE_NAME_RUNNING = '稼働中'

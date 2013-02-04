@@ -1,0 +1,6 @@
+<%= link_to 'パートナーの詳細に戻る', [:admin, @partner] %>
+<%= simple_form_for [:admin, @server] do |f| %>
+  <%= render 'form', f: f %>
+  <p><%= f.submit %></p>
+<% end %>
+
