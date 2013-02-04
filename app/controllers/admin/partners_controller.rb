@@ -5,8 +5,12 @@ class Admin::PartnersController < Admin::Base
   add_crumb "パートナーTOP", "/admin/partners"
   # 一覧表示アクション
   def index
-    @partners = Partner.order("id").
-      paginate(page: params[:page], per_page: 5)
+    @partners = Kaminari.paginate_array(Partner.order "id").
+                  page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # 詳細表示アクション

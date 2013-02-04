@@ -1,0 +1,25 @@
+<div id="partners" class="abc">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>名前カナ</th>
+        <th>住所</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @partners.each do |partner| %>
+        <tr>
+          <td><%= partner.id %></td>
+          <td>
+            <%= link_to partner.name, [:admin, partner] %>
+          </td>
+          <td><%= partner.name_kana%></td>
+          <td><%= partner.address %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @partners, remote: true %>
+</div>
