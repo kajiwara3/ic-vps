@@ -1,7 +1,7 @@
-<% @title = "詳細表示" %>
-<h1><%= @title %></h1>
-<%= link_to "一覧に戻る", vps_management_index_path %> |
-<%= link_to "編集する", "#"%>
+<% @title = "詳細" %>
+<h2><%= @title %></h2>
+<%= link_to "一覧に戻る", vps_management_index_path %>
+<!-- |<%= link_to "編集する", "#"%> -->
 <table>
   <tr>
     <th>ID</th>
@@ -20,6 +20,7 @@
     <td><%= state_name @server.name %></td>
   </tr>
 </table>
+<!--
 <%= link_to "削除する", [current_partner, @server],
   method: :delete, confirm: "本当に削除しますか？"%>
 
@@ -33,4 +34,4 @@
   <%= hidden_field_tag :domain_name, @server.name %>
   <%= submit_tag "起動", confirm: "Are you sure?" %>
 <% end %>
-
+-->
