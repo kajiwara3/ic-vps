@@ -1,0 +1,19 @@
+<div id="servers" class="abc">
+  <table>
+    <tr>
+      <th>タグ</th>
+      <th>名前</th>
+      <th>登録日時</th>
+      <th>ステータス</th>
+    </tr>
+    <% @server_list.each do |server| %>
+      <tr>
+        <td><%= server.tag %></td>
+        <td><%= link_to server.name, [current_partner, server] %></td>
+        <td><%= server.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= state_name server.name %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= paginate @server_list, remote: true %>
+</div>
