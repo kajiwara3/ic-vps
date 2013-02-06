@@ -3,8 +3,12 @@ class Admin::ContactsController < Admin::Base
   layout "admin_application"
 
   def index
-    @contact_list = Contact.order(:id).
-      paginate(page: params[:page], per_page: 5)
+    @contact_list = Kaminari.paginate_array(Contact.order(:id)).
+                      page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
