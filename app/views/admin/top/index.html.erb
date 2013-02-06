@@ -6,16 +6,14 @@
   <ul>
     <%= render @contacts %>
   </ul>
-<%= link_to "お問い合わせ一覧へ", :admin_contacts %>
-<br />
-<br />
-
+  <%= link_to "お問い合わせ一覧へ", :admin_contacts %>
+  <br />
+  <br />
   <h2>公開中のお知らせ</h2>
-  <ul>
-    <li>あああああああああああああ</li>
-    <li>あああああああああああああ</li>
-    <li>あああああああああああああ</li>
-    <li>あああああああああああああ</li>
-  </ul>
-お知らせ一覧へ
+  <% if @notifications.size == 0 %>
+    <p>お知らせはありません</p>
+  <% else %>
+    <%= render 'notifications' %>
+  <% end %>
+  <%= link_to "お知らせ一覧へ", :admin_notifications %>
 <% end %>

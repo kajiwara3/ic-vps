@@ -1,0 +1,7 @@
+<ul>
+  <% @notifications.each do |notice| %>
+    <li><%= link_to notice.title + " (#{notice.released_at}〜#{notice.expired_at})",
+     [:admin, notice] %>
+    </li>
+  <% end %>
+</ul>

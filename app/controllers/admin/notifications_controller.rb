@@ -4,8 +4,12 @@ class Admin::NotificationsController < Admin::Base
 
   # 一覧表示アクション
   def index
-    @notifications = Notification.order("id desc").
-      paginate(page: params[:page], per_page: 5)
+    @notifications = Kaminari.paginate_array(Notification.order "released_at desc").
+      page(params[:page]).per(5)
+      respond_to do |format|
+        format.html
+        format.js
+      end
   end
 
   # 詳細表示アクション

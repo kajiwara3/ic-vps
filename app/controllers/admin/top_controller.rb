@@ -5,5 +5,6 @@ class Admin::TopController < Admin::Base
   #indexアクション
   def index
     @contacts = Contact.last_five_contacts
+    @notifications = Notification.readable.limit(5)
   end
 end
