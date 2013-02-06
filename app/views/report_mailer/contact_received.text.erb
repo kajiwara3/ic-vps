@@ -1,3 +1,6 @@
-ReportMailer#contact_received
+お問い合わせがありました。
 
-<%= @greeting %>, find me in app/views/app/views/report_mailer/contact_received.text.erb
+<%= url_for(host: IcVps::Application.config.host_name,
+            controller: 'admin/contacts',
+            action: 'show',
+            id: @contact.id) %>

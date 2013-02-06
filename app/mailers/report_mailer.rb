@@ -1,3 +1,4 @@
+# coding: utf-8
 class ReportMailer < ActionMailer::Base
   default from: "from@example.com"
 
@@ -6,9 +7,10 @@ class ReportMailer < ActionMailer::Base
   #
   #   en.report_mailer.contact_received.subject
   #
-  def contact_received
-    @greeting = "Hi"
-
-    mail to: IcVps::Application.config.notification_email
+  def contact_received(contact)
+    @contact = contact
+    mail subject: "お問い合わせ通知メール",
+         to: IcVps::Application.config.notification_email,
+         from: 'info@ic-vps.com'
   end
 end

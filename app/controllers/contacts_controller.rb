@@ -26,6 +26,7 @@ class ContactsController < ApplicationController
     @contact.assign_attributes params[:contact]
     @contact.partner_id = current_partner.id
     if @contact.save
+      ReportMailer.contact_received(@contact).deliver
       return redirect_to @contact, notice: "お問い合わせを賜りました"
     end
     render "new"
