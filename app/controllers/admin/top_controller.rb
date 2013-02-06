@@ -4,7 +4,6 @@ class Admin::TopController < Admin::Base
 
   #indexアクション
   def index
-# ログイン画面にはレイアウトを使わない
-#        render layout: false if @current_administrator.blank?
+    @contacts = Contact.last_five_contacts
   end
 end

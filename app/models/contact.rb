@@ -7,4 +7,6 @@ class Contact < ActiveRecord::Base
     lambda {|partner|
       where('partner_id = ?', partner.id).order("id desc")
     }
+
+  scope :last_five_contacts, order("id").limit(5)
 end
