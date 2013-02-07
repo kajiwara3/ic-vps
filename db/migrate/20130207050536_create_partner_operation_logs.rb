@@ -5,6 +5,7 @@ class CreatePartnerOperationLogs < ActiveRecord::Migration
       t.text :url
       t.text :ip_address
       t.text :useragent
+      t.text :request_method
       t.timestamps
     end
   end

@@ -1,3 +1,3 @@
 class PartnerOperationLog < ActiveRecord::Base
-  belogs_to :partner
+  belongs_to :partner
 end

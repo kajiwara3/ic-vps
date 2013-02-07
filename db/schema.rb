@@ -79,8 +79,9 @@ ActiveRecord::Schema.define(:version => 20130207050536) do
     t.text     "url"
     t.text     "ip_address"
     t.text     "useragent"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "request_method"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "partners", :force => true do |t|

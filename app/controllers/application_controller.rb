@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
 #  before_filter :authorize
 
   class Forbidden < StandardError; end
+  # ログ保存クラス
+  include PartnerLogger
+  before_filter :record, only: ['update', 'create']
 
   private
   def authorize

@@ -2,7 +2,7 @@
 class Admin::Base < ApplicationController
   before_filter :authorize
   before_filter :admin_login_required
-
+  skip_before_filter :record
   # パンくず設定
   add_crumb 'HOME', "/admin"
 
