@@ -80,5 +80,7 @@ IcVps::Application.routes.draw do
     resources :contacts do
       collection { get "search"}
     end
+    # ログ管理
+    resources :partner_operation_logs, only: [:index]
   end
 end

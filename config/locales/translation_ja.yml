@@ -10,6 +10,7 @@ ja:
       notification: お知らせ  #g
       partner: パートナー  #g
       private_server: プライベートサーバー  #g
+      partner_operation_logs: パートナー様操作ログ
 
     attributes:
       administrator:
@@ -74,6 +75,14 @@ ja:
         partner: パートナー
         private_server_code: プライベートサーバーコード  #g
         tag: タグ  #g
+
+      partner_operation_log:
+        partner: パートナー
+        url: URL
+        ip_address: IP
+        useragent: UserAgent
+        request_method: メソッド
+        created_at: 日時
   views:
     pagination:
       first: '<<'
