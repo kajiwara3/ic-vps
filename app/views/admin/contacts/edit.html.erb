@@ -1,5 +1,5 @@
 <%= link_to "戻る", [:admin, @contact] %>
-<%= form_for [:admin, @contact] do |form| %>
+<%= simple_form_for [:admin, @contact] do |form| %>
   <%= render "form", form: form %>
   <%= form.submit %>
 <% end %>

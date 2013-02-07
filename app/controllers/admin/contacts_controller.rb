@@ -14,10 +14,15 @@ class Admin::ContactsController < Admin::Base
   end
 
   def show
+    @contact_statuses = ContactStatus.all
     @contact = Contact.find params[:id]
   end
 
-  def edit
+  def update
     @contact = Contact.find params[:id]
+    @contact.assign_attributes params[:contact]
+    if @contact.save
+      redirect_to [:admin, @contact], notice: '更新しました。'
+    end
   end
 end

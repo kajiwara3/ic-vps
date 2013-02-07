@@ -1,12 +1,4 @@
-<table>
-  <tbody>
-    <tr>
-      <th>
-        <%= form.label :partner_id %>
-      </th>
-      <td>
-        <%= @contact.partner.name %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<%= form.association :contact_status,
+                                    collection: ContactStatus.all,
+                                    pronpt: "---",
+                                    label: false %>

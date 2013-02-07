@@ -1,33 +1,38 @@
-<%= link_to 'Back', :back %> | <%= link_to "編集する", [:edit, :admin, @contact] %>
-<table>
-  <tbody>
-    <tr>
-      <th><%= Contact.human_attribute_name "partner" %></th>
-      <td><%= @contact.partner.name %></td>
-    </tr>
-    <tr>
-      <th><%= Contact.human_attribute_name "contact_status" %></th>
-      <td><%= @contact.contact_status.name %></td>
-    </tr>
-    <tr>
-      <th><%= Contact.human_attribute_name "subject" %></th>
-      <td><%= @contact.subject %></td>
-    </tr>
-    <tr>
-      <th><%= Contact.human_attribute_name "body" %></th>
-      <td><%= simple_format @contact.body %></td>
-    </tr>
-    <tr>
-      <th><%= Contact.human_attribute_name "memo" %></th>
-      <td><%= simple_format @contact.memo %></td>
-    </tr>
-    <tr>
-      <th><%= Contact.human_attribute_name "created_at" %></th>
-      <td><%= l @contact.created_at, format: :default %></td>
-    </tr>
-    <tr>
-      <th><%= Contact.human_attribute_name "updated_at" %></th>
-      <td><%= l @contact.updated_at, format: :default %></td>
-    </tr>
-  </tbody>
-</table>
+<%= link_to 'Back', :back %> |
+<%= link_to '一覧', :admin_contacts %>
+<%= simple_form_for [:admin, @contact] do |form| %>
+<%= form.input :id, as: :hidden %>
+  <table>
+    <tbody>
+      <tr>
+        <th><%= Contact.human_attribute_name "partner" %></th>
+        <td><%= @contact.partner.name %></td>
+      </tr>
+      <tr>
+        <th><%= Contact.human_attribute_name "contact_status" %></th>
+        <td><%= render "form", form: form %></td>
+      </tr>
+      <tr>
+        <th><%= Contact.human_attribute_name "subject" %></th>
+        <td><%= @contact.subject %></td>
+      </tr>
+      <tr>
+        <th><%= Contact.human_attribute_name "body" %></th>
+        <td><%= simple_format @contact.body %></td>
+      </tr>
+      <tr>
+        <th><%= Contact.human_attribute_name "memo" %></th>
+        <td><%= simple_format @contact.memo %></td>
+      </tr>
+      <tr>
+        <th><%= Contact.human_attribute_name "created_at" %></th>
+        <td><%= l @contact.created_at, format: :default %></td>
+      </tr>
+      <tr>
+        <th><%= Contact.human_attribute_name "updated_at" %></th>
+        <td><%= l @contact.updated_at, format: :default %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= form.submit %>
+<% end %>
