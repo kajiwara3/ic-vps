@@ -6,7 +6,7 @@
     <tbody>
       <tr>
         <th><%= Contact.human_attribute_name "partner" %></th>
-        <td><%= @contact.partner.name %></td>
+        <td><%= link_to @contact.partner.name, [:admin, @contact.partner] %></td>
       </tr>
       <tr>
         <th><%= Contact.human_attribute_name "contact_status" %></th>
