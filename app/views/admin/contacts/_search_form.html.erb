@@ -1,14 +1,14 @@
-<%= search_form_for(@search, html: {class: 'form-search'}, remote: true) do |f| %>
+<%= search_form_for([:admin, @search], html: {class: 'form-search'}, remote: true) do |f| %>
+  <div class="field">
+    <%= f.label :partner_name, 'パートナー名' %>
+    <%= f.text_field :partner_name_cont %>
+  </div>
   <div class="field">
     <%= f.label :subject, '題名' %>
     <%= f.text_field :subject_cont %>
   </div>
   <div class="field">
-    <%= f.label :body, '本文' %>
-    <%= f.text_field :body_cont%>
-  </div>
-  <div class="field">
-    <%= f.label :contact_status_id, "お問い合わせ状況" %>
+    <%= f.label :contact_status_id, 'お問い合わせ状況' %>
     <%= f.collection_select(:contact_status_id_eq,
                             @contact_statuses,
                             :id,
