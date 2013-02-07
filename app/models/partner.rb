@@ -1,7 +1,9 @@
 # coding: utf-8
 class Partner < ActiveRecord::Base
   has_many :private_servers, dependent: :destroy
-  has_many :contacts
+  has_many :contacts, dependent: :destroy
+  has_many :partner_operation_log, dependent: :destroy
+
   accepts_nested_attributes_for :private_servers, allow_destroy: true
   accepts_nested_attributes_for :contacts, allow_destroy: true
 
