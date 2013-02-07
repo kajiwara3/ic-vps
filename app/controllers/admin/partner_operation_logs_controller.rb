@@ -1,4 +1,6 @@
 class Admin::PartnerOperationLogsController < Admin::Base
+  layout "admin_application"
+
   def index
     @search = PartnerOperationLog.search(params[:q])
     @logs = Kaminari.paginate_array(@search.result.order 'id desc').

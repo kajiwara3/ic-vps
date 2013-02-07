@@ -5,6 +5,7 @@
         <th><%= PartnerOperationLog.human_attribute_name 'partner' %></th>
         <th><%= PartnerOperationLog.human_attribute_name 'url' %></th>
         <th><%= PartnerOperationLog.human_attribute_name 'ip_address' %></th>
+        <th><%= PartnerOperationLog.human_attribute_name 'useragent' %></th>
         <th><%= PartnerOperationLog.human_attribute_name 'request_method' %></th>
         <th><%= PartnerOperationLog.human_attribute_name 'created_at' %></th>
       </tr>
@@ -15,6 +16,7 @@
           <td><%= link_to log.partner.name, [:admin, log.partner] %></td>
           <td><%= log.url %></td>
           <td><%= log.ip_address %></td>
+          <td><%= log.useragent %></td>
           <td><%= log.request_method %></td>
           <td><%= l log.created_at, format: :default %></td>
         </tr>
