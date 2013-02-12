@@ -34,4 +34,7 @@ IcVps::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.notification_email = 'ic-vps@stf.ic-net.or.jp'
+  config.host_name = "ic-vps"
 end
