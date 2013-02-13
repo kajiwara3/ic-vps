@@ -1,6 +1,5 @@
 # coding: utf-8
 class Admin::AdministratorsController < Admin::Base
-  before_filter :authenticate_admin_administrator!
   add_crumb "管理者TOP", "/admin/administrators/"
 
   # indexアクション

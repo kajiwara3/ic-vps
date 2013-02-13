@@ -12,14 +12,14 @@
     <li>
       <%= link_to "一般サポート関連", :admin_user_support %>
     </li>
-    <% if @current_administrator %>
+    <% if current_admin_administrator %>
       <li>
-        <%= link_to "ログアウト", :admin_session, method: :delete,
+        <%= link_to "ログアウト", destroy_admin_administrator_session_path,
           confirm: "ログアウトしますか？" %>
       </li>
     <% else %>
       <li>
-        <%= link_to "ログイン", :admin_root %>
+        <%= link_to "ログイン", new_admin_administrator_session_path %>
       </li>
     <% end %>
   </ul>
