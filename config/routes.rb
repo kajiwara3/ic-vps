@@ -1,11 +1,11 @@
 IcVps::Application.routes.draw do
-  # deviseを使ったユーザー認証
-  devise_for :partners
-
   ###############################################
   # パートナーページ用リソース
   ###############################################
+  # TOP
   root to: "top#index", only: :index
+  # deviseを使ったユーザー認証
+  devise_for :partners
   # VPS管理
   resources :vps_management
 
@@ -46,6 +46,8 @@ IcVps::Application.routes.draw do
   namespace :admin do
     # 管理者トップ
     root to: "top#index"
+    # Devise
+    devise_for :administrators
     # パートナーリソース
     resources :partners do
       collection { get "search" }
@@ -66,8 +68,6 @@ IcVps::Application.routes.draw do
     resources :domain_templates do
       collection { get "search" }
     end
-    # セッションリソース
-    resource :session, only: [:create, :destroy]
     # FAQカテゴリー
     resources :faq_categories
     # FAQ
