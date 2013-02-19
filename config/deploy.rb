@@ -11,7 +11,7 @@
 #---
 # be sure to change these
 set :user, 'ic-vps'
-set :domain, 'ic-vps-server'
+# set :domain, 'ic-vps-server'
 set :domain, 'prod-ic-vps'
 set :application, 'ic-vps'
 
@@ -62,8 +62,9 @@ end
 =end
 
 set :scm_verbose, true
-set :use_sudo, true
-set :rails_env, :staging
+# set :use_sudo, true
+set :use_sudo, false
+set :rails_env, :production
 
 namespace :deploy do
   desc "cause Passenger to initiate a restart"
@@ -80,6 +81,15 @@ namespace :deploy do
   task :config_symlink do
     run "rm #{release_path}/config/database.yml"
     run "ln -s /home/ic-vps/config/database.yml #{release_path}/config/database.yml"
+  end
+
+  namespace :db do
+    desc "Create Production Database"
+    task :create do
+      puts "\n\n=== Creating the Production Database! ===\n\n"
+      run "cd #{current_path}; rake db:create RAILS_ENV=production"
+      system "cap deploy:set_permissions"
+    end
   end
 end
 
