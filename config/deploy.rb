@@ -79,7 +79,7 @@ namespace :deploy do
 
   desc "Copy shared config files to current application."
   task :config_symlink do
-    run "rm #{release_path}/config/database.yml"
+    # run "rm #{release_path}/config/database.yml"
     run "ln -s /home/ic-vps/config/database.yml #{release_path}/config/database.yml"
   end
 
