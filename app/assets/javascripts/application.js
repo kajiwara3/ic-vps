@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.spin
+//= require common
 //= require_tree .
 
 $(function(){
