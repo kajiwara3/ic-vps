@@ -1,6 +1,6 @@
 # coding: utf-8
 class Admin::FaqsController < Admin::Base
-  layout "admin_application"
+  before_filter :authenticate_admin_administrator!
 
   # 一覧表示アクション。
   def index

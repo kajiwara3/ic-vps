@@ -14,7 +14,7 @@
     </li>
     <% if current_admin_administrator %>
       <li>
-        <%= link_to "ログアウト", destroy_admin_administrator_session_path,
+        <%= link_to "ログアウト", destroy_admin_administrator_session_path, method: :delete,
           confirm: "ログアウトしますか？" %>
       </li>
     <% else %>

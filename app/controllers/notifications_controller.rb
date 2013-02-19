@@ -1,5 +1,6 @@
 # cofing: utf-8
 class NotificationsController < ApplicationController
+  before_filter :record, only: ['update', 'create', 'destroy']
   # お知らせの一覧表示アクション。
   def index
     @notifications = Kaminari.paginate_array(Notification.order "id desc").

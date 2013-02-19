@@ -1,6 +1,6 @@
 #coding: utf-8
 class Admin::PartnersController < Admin::Base
-  layout "admin_application"
+  before_filter :authenticate_admin_administrator!
 
   add_crumb "パートナーTOP", "/admin/partners"
   # 一覧表示アクション

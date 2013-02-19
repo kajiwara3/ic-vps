@@ -1,5 +1,7 @@
 # coding: utf-8
 class PrivateServersController < ApplicationController
+  before_filter :authenticate_partner!
+  before_filter :record, only: ['update', 'create', 'destroy']
   include VpsManager
 
   def show

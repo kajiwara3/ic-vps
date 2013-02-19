@@ -1,6 +1,7 @@
 # coding: utf-8
 class PartnersController < ApplicationController
   before_filter :authenticate_partner!
+  before_filter :record, only: ['update', 'create', 'destroy']
 
   def show
     @partner = current_partner

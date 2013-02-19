@@ -7,22 +7,12 @@ class Administrator < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   include EmailAddressChecker
 
-  attr_accessor :password, :password_confirmation
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true
   validate  :check_email
-  validates :password, presence: { on: :create },
-    confirmation: { allow_blank: true }
-
-  def password=(password)
-    if password.present?
-      self.hashed_password = BCrypt::Password.create(password)
-    end
-    @password = password
-  end
 
   private
   def check_email

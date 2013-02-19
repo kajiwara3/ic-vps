@@ -14,10 +14,19 @@ ja:
 
     attributes:
       administrator:
-        deleted_at: 削除日  #g
+        current_sign_in_at: current_sign_in_at  #g
+        current_sign_in_ip: current_sign_in_ip  #g
         email: メールアドレス  #g
-        hashed_password: 暗号化パスワード  #g
-        name: 名前  #g
+        encrypted_password: 暗号化パスワード  #g
+        last_sign_in_at: 最終ログイン日時  #g
+        last_sign_in_ip: 最終ログインIP  #g
+        name: 氏名  #g
+        remember_created_at: remember_created_at  #g
+        reset_password_sent_at: reset_password_sent_at  #g
+        reset_password_token: reset_password_token  #g
+        password: パスワード
+        password_confirmation: もう一度入力してください
+        current_password: 現在のパスワード
 
       contact:
         body: 本文  #g

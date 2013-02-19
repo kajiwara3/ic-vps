@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20130212084615) do
   create_table "administrators", :force => true do |t|
     t.string   "name",                                   :null => false
     t.string   "email",                                  :null => false
-    t.string   "hashed_password",                        :null => false
     t.datetime "deleted_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false

@@ -1,5 +1,6 @@
 # coding: utf-8
 class Admin::PrivateServersController < Admin::Base
+  before_filter :authenticate_admin_administrator!
   def new
     @partner = Partner.find_by_id(params[:partner_id])
     @server = PrivateServer.new(partner_id: @partner.id)

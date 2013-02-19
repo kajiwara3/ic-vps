@@ -1,6 +1,8 @@
 # coding: utf-8
 class ContactsController < ApplicationController
   before_filter :authenticate_partner!
+  before_filter :record, only: ['update', 'create', 'destroy']
+
   def index
     @contact_statuses = ContactStatus.all
     @search = Contact.search(params[:q])

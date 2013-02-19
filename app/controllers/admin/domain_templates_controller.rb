@@ -1,7 +1,7 @@
 #coding: utf-8
 # 管理者によるドメインのひな形登録用モジュール
 class Admin::DomainTemplatesController < Admin::Base
-  layout "admin_application"
+  before_filter :authenticate_admin_administrator!
 
   # 登録済みドメインテンプレートの一覧表示用アクション。
   def index

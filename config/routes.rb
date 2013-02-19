@@ -5,7 +5,7 @@ IcVps::Application.routes.draw do
   # TOP
   root to: "top#index", only: :index
   # deviseを使ったユーザー認証
-  devise_for :partners
+  devise_for :partners, controllers: {sessions: 'sessions'}
   # VPS管理
   resources :vps_management
 
@@ -47,7 +47,7 @@ IcVps::Application.routes.draw do
     # 管理者トップ
     root to: "top#index"
     # Devise
-    devise_for :administrators
+    devise_for :administrators, controllers: {sessions: 'admin/sessions'}
     # パートナーリソース
     resources :partners do
       collection { get "search" }

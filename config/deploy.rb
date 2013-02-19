@@ -12,6 +12,7 @@
 # be sure to change these
 set :user, 'ic-vps'
 set :domain, 'ic-vps-server'
+set :domain, 'prod-ic-vps'
 set :application, 'ic-vps'
 
 # adjust if you are using RVM, remove if you are not

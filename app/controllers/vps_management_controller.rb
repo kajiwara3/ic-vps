@@ -1,7 +1,8 @@
 # coding: utf-8
 class VpsManagementController < ApplicationController
-  before_filter :authenticate_partner!
   include VpsManager
+  before_filter :authenticate_partner!
+  before_filter :record, only: ['update', 'create', 'destroy']
 
   # 一覧表示アクション。
   def index

@@ -1,5 +1,5 @@
 class Admin::PartnerOperationLogsController < Admin::Base
-  layout "admin_application"
+  before_filter :authenticate_admin_administrator!
 
   def index
     @search = PartnerOperationLog.search(params[:q])

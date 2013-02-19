@@ -1,6 +1,6 @@
 # coding: utf-8
 class Admin::ContactsController < Admin::Base
-  layout "admin_application"
+  before_filter :authenticate_admin_administrator!
 
   def index
     @contact_statuses = ContactStatus.all

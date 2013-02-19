@@ -1,6 +1,6 @@
 # coding: utf-8
 class Admin::FaqCategoriesController < Admin::Base
-  layout "admin_application"
+  before_filter :authenticate_admin_administrator!
   # GET /admin/faq_categories
   # GET /admin/faq_categories.json
   # 一覧表示アクション。

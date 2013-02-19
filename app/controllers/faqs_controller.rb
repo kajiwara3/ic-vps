@@ -1,5 +1,6 @@
 class FaqsController < ApplicationController
   before_filter :authenticate_partner!
+  before_filter :record, only: ['update', 'create', 'destroy']
   # 一覧アクション。
   def index
     faq_category_id = params[:faq_category_id]
