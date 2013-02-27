@@ -46,6 +46,7 @@ class Admin::PartnersController < Admin::Base
   # パートナー更新アクション
   def update
     @partner = Partner.find(params[:id])
+    delete_unchange_password_params
     @partner.assign_attributes(params[:partner])
     if @partner.save
       redirect_to [:admin, @partner], notice: "パートナー情報を更新しました"
@@ -61,6 +62,14 @@ class Admin::PartnersController < Admin::Base
       redirect_to :admin_partners, notice: "パートナー情報を削除しました"
     else
       render "show"
+    end
+  end
+
+  private
+  def delete_unchange_password_params
+    if params[:partner][:password].blank? && params[:partner][:password_confirmation].blank?
+      params[:partner].delete :password
+      params[:partner].delete :password_confirmation
     end
   end
 end
