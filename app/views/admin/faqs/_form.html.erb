@@ -4,9 +4,9 @@
     <td><%= form.text_field :tag %></td>
   </tr>
   <tr>
-    <th><%= form.label :admin_faq_category_id %></th>
+    <th><%= form.label :faq_category_id %></th>
     <td>
-      <%= form.collection_select :admin_faq_category_id,
+      <%= form.collection_select :faq_category_id,
                                   @faq_categories,
                                   :id,
                                   :name,
@@ -22,4 +22,3 @@
     <td><%= form.text_area :answer, cols: 80 %></td>
   </tr>
 </table>
-
