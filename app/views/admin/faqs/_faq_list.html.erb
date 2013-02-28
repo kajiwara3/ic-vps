@@ -1,7 +1,7 @@
 <table>
   <tr>
-    <th><%= Admin::FaqCategory.human_attribute_name('id') %></th>
-    <th><%= Admin::FaqCategory.human_attribute_name('name') %></th>
+    <th><%= FaqCategory.human_attribute_name 'id' %></th>
+    <th><%= FaqCategory.human_attribute_name'name' %></th>
     <th><%= Faq.human_attribute_name('question') %></th>
   </tr>
   <% @faq_list.each do |faq| %>
