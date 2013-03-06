@@ -34,3 +34,5 @@ config/environments/development.rb
 .DS_Store
 tmp
 config/database.yml
+config/deploy/production.rb
+config/deploy/staging.rb

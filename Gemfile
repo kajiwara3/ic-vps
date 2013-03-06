@@ -54,6 +54,9 @@ group :test, :development do
   # KVMコントロール
   gem 'ruby-libvirt'
   # Deploy with Capistrano
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano_colors'
   gem 'rvm-capistrano'
 
   # Gems used only for assets and not required
