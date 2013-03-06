@@ -23,7 +23,7 @@
 <!--
 <%= link_to "削除する", [current_partner, @server],
   method: :delete, confirm: "本当に削除しますか？"%>
-
+-->
 <%= form_tag({ action: "stop" }, {method: :put}) do %>
   <%= hidden_field_tag :server_id, @server.id %>
   <%= hidden_field_tag :domain_name, @server.name %>
@@ -34,4 +34,3 @@
   <%= hidden_field_tag :domain_name, @server.name %>
   <%= submit_tag "起動", confirm: "Are you sure?" %>
 <% end %>
--->
