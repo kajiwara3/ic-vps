@@ -124,7 +124,7 @@ group :production do
   # レンダリング関連
   # 国際化
   gem 'rails-i18n'
-  gem 'i18n', '~>0.6.4'
+  gem 'i18n', '~>0.6.0'
   #  ページング
   gem 'will_paginate', '~> 3.0'
   gem 'kaminari'
