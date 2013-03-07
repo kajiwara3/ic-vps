@@ -248,7 +248,6 @@ DEPENDENCIES
   guard
   guard-rspec
   guard-spork
-  i18n (~> 0.6.0)
   i18n_generators
   jquery-rails
   jquery-ui-rails
