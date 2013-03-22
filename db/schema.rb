@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212084615) do
+ActiveRecord::Schema.define(:version => 20130322080119) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name",                                   :null => false
@@ -109,6 +109,9 @@ ActiveRecord::Schema.define(:version => 20130212084615) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "phone_number1"
+    t.string   "phone_number2"
+    t.string   "fax_number"
   end
 
   add_index "partners", ["email"], :name => "index_partners_on_email", :unique => true
