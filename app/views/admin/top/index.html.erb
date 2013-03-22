@@ -1,5 +1,5 @@
 <% @page_title = "パートナーページトップ" %>
-<% if @current_administrator.blank? %>
+<% if !admin_administrator_signed_in? %>
   <%= link_to 'login', :new_admin_administrator_session %>
 <% else %>
   <h2>未処理お問い合わせ</h2>
