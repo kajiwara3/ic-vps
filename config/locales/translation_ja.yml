@@ -77,6 +77,9 @@ ja:
         remember_created_at: remember_created_at  #g
         reset_password_sent_at: reset_password_sent_at  #g
         reset_password_token: reset_password_token  #g
+        phone_number1: 電話番号1
+        phone_number2: 電話番号2
+        fax_number: FAX
 
       private_server:
         memo: メモ  #g

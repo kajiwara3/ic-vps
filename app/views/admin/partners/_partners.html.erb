@@ -3,9 +3,9 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>名前</th>
-        <th>名前カナ</th>
-        <th>住所</th>
+        <th><%= Partner.human_attribute_name "name" %></th>
+        <th><%= Partner.human_attribute_name "email" %></th>
+        <th><%= Partner.human_attribute_name "phone_number1" %></th>
       </tr>
     </thead>
     <tbody>
@@ -15,8 +15,8 @@
           <td>
             <%= link_to partner.name, [:admin, partner] %>
           </td>
-          <td><%= partner.name_kana%></td>
-          <td><%= partner.address %></td>
+          <td><%= partner.email%></td>
+          <td><%= partner.phone_number1 %></td>
         </tr>
       <% end %>
     </tbody>

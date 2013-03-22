@@ -4,15 +4,39 @@
     <td><%= @partner.id %></td>
   </tr>
   <tr>
-    <th>名前</th>
+    <th>
+      <%= Partner.human_attribute_name "name" %>
+    </th>
     <td><%= @partner.name %></td>
   </tr>
   <tr>
-    <th>名前カナ</th>
+    <th>
+      <%= Partner.human_attribute_name "name_kana" %>
+    </th>
     <td><%= @partner.name_kana %></td>
   </tr>
   <tr>
-    <th>住所</th>
+    <th>
+      <%= Partner.human_attribute_name "address" %>
+    </th>
     <td><%= @partner.address %></td>
+  </tr>
+  <tr>
+    <th>
+      <%= Partner.human_attribute_name "phone_number1" %>
+    </th>
+    <td><%= @partner.phone_number1 %></td>
+  </tr>
+  <tr>
+    <th>
+      <%= Partner.human_attribute_name "phone_number2" %>
+    </th>
+    <td><%= @partner.phone_number2 %></td>
+  </tr>
+  <tr>
+    <th>
+      <%= Partner.human_attribute_name "fax_number" %>
+    </th>
+    <td><%= @partner.fax_number %></td>
   </tr>
 </table>
