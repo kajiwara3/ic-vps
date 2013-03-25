@@ -16,7 +16,7 @@ class Partner < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :name_kana, :address, :email, :password,
                   :password_confirmation, :remember_me,
-                  :phone_number1, :phone_number2, :fax_number
+                  :phone_number1, :phone_number2, :fax_number, :memo
 
   include EmailAddressChecker
 

@@ -39,4 +39,10 @@
     </th>
     <td><%= @partner.fax_number %></td>
   </tr>
+  <tr>
+    <th>
+      <%= Partner.human_attribute_name "memo" %>
+    </th>
+    <td><%= simple_format @partner.memo %></td>
+  </tr>
 </table>

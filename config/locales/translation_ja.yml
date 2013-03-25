@@ -80,6 +80,7 @@ ja:
         phone_number1: 電話番号1
         phone_number2: 電話番号2
         fax_number: FAX
+        memo: メモ
 
       private_server:
         memo: メモ  #g
